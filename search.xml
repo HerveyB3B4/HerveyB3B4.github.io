@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>安装Kali WSL</title>
-    <url>/2023/11/30/How-to-install-Kali-WSL/</url>
-    <content><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>Kali WSL（Windows Subsystem for Linux）是在 Windows 环境下运行 Kali Linux 的一种方式，同时，WSL相比于Linux虚拟机能和Windows较好的进行文件系统的互通，非常适合用于学习。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-开启-WSL-功能"><a href="#1-开启-WSL-功能" class="headerlink" title="1. 开启 WSL 功能"></a>1. 开启 WSL 功能</h3><p>确保系统为 Windows 10 专业版，然后按照以下步骤开启 WSL 功能：</p>
-<ul>
-<li><p>打开控制面板</p>
-</li>
-<li><p>进入程序 -&gt; 启用或关闭 Windows 功能</p>
-</li>
-<li><p>勾选”适用于 Linux 的 Windows 子系统”</p>
-</li>
-<li><p>系统更新并重启生效</p>
-</li>
-</ul>
-<h3 id="2-安装-Kali-WSL"><a href="#2-安装-Kali-WSL" class="headerlink" title="2. 安装 Kali WSL"></a>2. 安装 Kali WSL</h3><p>在 Windows 应用商店中搜索并下载适用于 Linux 的 Windows 子系统，选择 Kali 作为 Linux 发行版进行安装。</p>
-<h3 id="3-升级到-WSL2"><a href="#3-升级到-WSL2" class="headerlink" title="3. 升级到 WSL2"></a>3. 升级到 WSL2</h3><p>由于版本问题，确保升级到 WSL2，执行以下命令：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart wsl --set-version kali-linux 2</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="4-安装完整版-Kali"><a href="#4-安装完整版-Kali" class="headerlink" title="4. 安装完整版 Kali"></a>4. 安装完整版 Kali</h3><p>安装完成后，打开 Kali Linux ，根据设置用户名及密码。</p>
-<p>重新启动 Kali Linux ，这时我们发现我们的 Kali Linux 还有很多工具没用安装。</p>
-<p>执行以下命令安装 Kali 的完整版：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y kali-linux-large</span><br></pre></td></tr></table></figure></div>
-<h3 id="6-配置图形化桌面并连接（可选）"><a href="#6-配置图形化桌面并连接（可选）" class="headerlink" title="6. 配置图形化桌面并连接（可选）"></a>6. 配置图形化桌面并连接（可选）</h3><p>如果想要体验图形化界面，可以选择安装 Win-KeX</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install -y kali-win-kex</span><br></pre></td></tr></table></figure></div>
-
-<p>打开 Window Mode (窗口模式)</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --win</span><br></pre></td></tr></table></figure></div>
-
-<p>如果你想要体验 Seamless Mode (无缝模式)，还需要额外安装 <a class="link"   href="https://x410.dev/" >X410 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>安装完成后打开并勾选<code>ACCESS CONTROL</code>下的<code>WSL2</code>选项。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/How-to-install-Kali-WSL/X410-Settings.png"
-                     
-                ></p>
-<p>打开 Seamless Mode (窗口模式)</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --sl</span><br></pre></td></tr></table></figure></div>
-
-<p>详细教程:<a class="link"   href="https://x410.dev/cookbook/wsl/protecting-x410-public-access-for-wsl2-via-windows-defender-firewall/" >Protecting X410 Public Access for WSL2 via Windows Defender Firewall - X410.dev <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="7-额外配置（可选）"><a href="#7-额外配置（可选）" class="headerlink" title="7. 额外配置（可选）"></a>7. 额外配置（可选）</h3><p>根据需求，可以配置 Windows Terminal，将 Kali 和 Win-KeX 整合进 Terminal。</p>
-<p>以下是我的配置文件(仅留下 Kali WSL 相关配置)</p>
-<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;list&quot;</span><span class="punctuation">:</span></span><br><span class="line">		<span class="punctuation">[</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;46ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kali Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Wsl&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Window Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Seamless Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --sl --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">]</span></span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建教程</title>
     <url>/2020/08/13/Build-Your-Blog/</url>
     <content><![CDATA[<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h3><p>建这个博客踩了好多坑QWQ</p>
@@ -148,6 +97,159 @@
       </tags>
   </entry>
   <entry>
+    <title>Go语言获得Cravatar头像服务网址</title>
+    <url>/2023/09/30/Go-use-cravatar/</url>
+    <content><![CDATA[<p><del>Cravatar真是个好东西</del></p>
+<p>这是Cravatar图像请求的Go语言实现，具体的加密方式请查阅<a class="link"   href="https://cravatar.com/developer/api" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;crypto/md5&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// Hash值获取方式 先删除前导和尾随的空格，再将所有字符置为小写，最后进行MD5加密</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hash</span><span class="params">(email <span class="type">string</span>)</span></span> [<span class="number">16</span>]<span class="type">byte</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> md5.Sum([]<span class="type">byte</span>(strings.ToLower(strings.TrimFunc(email, <span class="function"><span class="keyword">func</span><span class="params">(r <span class="type">rune</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> r == <span class="string">&#x27; &#x27;</span></span><br><span class="line">    &#125;))))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 头像获取地址为 https://cravatar.cn/avatar/&#123;HASH&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmailToCravatarURL</span><span class="params">(email <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">&quot;https://cravatar.cn/avatar/%x&quot;</span>, Hash(email))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 试试效果！</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(EmailToCravatarURL(&#123;Your email here&#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>头像服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何使用Navicat连接WSL里的MySQL服务</title>
+    <url>/2023/08/02/How-to-use-Navicat-to-connect-to-MySQL-services-in-WSL/</url>
+    <content><![CDATA[<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h3><p>真的有人会干这么套娃的事情吗？</p>
+<p><del>原来是我啊，那没事了</del></p>
+<p>究其原因，还是由于之前技术不精，在Windows系统上安装MySQL，结果MySQL炸了，而且还没办法卸载干净，这次想着既然VSCode可以与WSL连接，为何Navicat不能与WSL里的MySQL连接呢？</p>
+<p>而且照<a class="link"   href="https://github.com/XCloudFance" >XCloudFance <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>学长的说法：“你可以把WSL想象是里面的一台电脑，你的Windows也是一台独立的电脑”，那么navicat理论上应该可以与WSL中的MySQL连接。</p>
+<p>于是，痛苦的两个小时配置之旅就开始了(中途还重装了一次WSL qwq)</p>
+<h3 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1 前期准备"></a>1 前期准备</h3><h4 id="1-1-安装Navicat"><a href="#1-1-安装Navicat" class="headerlink" title="1.1 安装Navicat"></a>1.1 安装Navicat</h4><p>自行Baidu&#x2F;Google&#x2F;Bing下载安装包</p>
+<p>安装包打开后一路next即可</p>
+<h4 id="1-2-安装WSL"><a href="#1-2-安装WSL" class="headerlink" title="1.2 安装WSL"></a>1.2 安装WSL</h4><p>Baidu&#x2F;Google&#x2F;Bing</p>
+<p>**注意:**记得将WSL版本设置为WSL2，本人使用的系统是Ubuntu22.04</p>
+<h4 id="1-3-在WSL中安装MySQL"><a href="#1-3-在WSL中安装MySQL" class="headerlink" title="1.3 在WSL中安装MySQL"></a>1.3 在WSL中安装MySQL</h4><p>在WSL终端中输入</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure></div>
+
+<p>即可，<code>root</code>及其余账户密码配置请自行百度</p>
+<h3 id="2-正式开始吧！"><a href="#2-正式开始吧！" class="headerlink" title="2 正式开始吧！"></a>2 正式开始吧！</h3><h4 id="2-1-找到WSL的IP地址"><a href="#2-1-找到WSL的IP地址" class="headerlink" title="2.1 找到WSL的IP地址"></a>2.1 找到WSL的IP地址</h4><p>首先，我们应该让Windows主机能够访问WSL，那么我们就应该先知道WSL的本地IP访问地址。</p>
+<p>在Windows下打开终端(Power Shell)，使用如下命令查询：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure></div>
+
+<p>可以看到这样一行提示：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">以太网适配器 vEthernet (WSL):</span><br><span class="line"></span><br><span class="line">   连接特定的 DNS 后缀 . . . . . . . :</span><br><span class="line">   本地链接 IPv6 地址. . . . . . . . : fe80::85d4:3cdb:df1f:f6e1%42</span><br><span class="line">   IPv4 地址 . . . . . . . . . . . . : 172.30.224.1</span><br><span class="line">   子网掩码  . . . . . . . . . . . . : 255.255.240.0</span><br><span class="line">   默认网关. . . . . . . . . . . . . :</span><br></pre></td></tr></table></figure></div>
+
+<p>说明主机其实是能够访问到WSL的。</p>
+<p>在WSL的终端中，使用<code>ifconfig</code>查询本地IP地址</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></div>
+
+<p>有可能需要使用如下指令安装<code>net-tools</code>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install net-tools</span><br></pre></td></tr></table></figure></div>
+
+<p>安装成功后，运行<code>ifconfig</code>会输出类似下面的结果：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 172.30.224.99  netmask 255.255.240.0  broadcast 172.30.239.255</span><br><span class="line">        inet6 fe80::215:5dff:fe99:f76a  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 00:15:5d:99:f7:6a  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 104254  bytes 266388818 (266.3 MB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 69925  bytes 5218621 (5.2 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1000  (Local Loopback)</span><br><span class="line">        RX packets 5644  bytes 29799099 (29.7 MB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 5644  bytes 29799099 (29.7 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure></div>
+
+<p>第二行的<code>172.30.224.99</code>便是你的WSL的本地IP地址。</p>
+<h3 id="2-2-设置MySQL被局域网访问"><a href="#2-2-设置MySQL被局域网访问" class="headerlink" title="2.2 设置MySQL被局域网访问"></a>2.2 设置MySQL被局域网访问</h3><p>这时我们可以试着用Navicat连接一下刚才获得IP地址的WSL的MySQL服务，发现Navicat显示连接失败，这是因为我们未设置MySQL能被局域网访问。</p>
+<p>进入MySQL中，修改账户的访问权限：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p &lt;password&gt;</span><br><span class="line">mysql-&gt;use mysql</span><br><span class="line">mysql-&gt;update user set host = &#x27;%&#x27; where user =&#x27;root&#x27;;</span><br><span class="line">mysql-&gt;grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; with grant option;</span><br><span class="line">mysql-&gt;flush privileges;</span><br><span class="line">mysql-&gt;exit;</span><br></pre></td></tr></table></figure></div>
+
+<p>找到MySQL的配置文件进行修改:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>mysqld.cnf</code>中，找到这样一行配置：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure></div>
+
+<p>修改为：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>保存后重启MySQL：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure></div>
+
+<p>可以通过<code>netstat -aptn</code>检查MySQL的状态</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">(Not all processes could be identified, non-owned process info</span><br><span class="line"> will not be shown, you would have to be root to see it all.)</span><br><span class="line">Active Internet connections (servers and established)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</span><br><span class="line">tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-3-设置Ubuntu防火墙"><a href="#2-3-设置Ubuntu防火墙" class="headerlink" title="2.3 设置Ubuntu防火墙"></a>2.3 设置Ubuntu防火墙</h3><p>此时我们还是无法连接，还需关闭Ubuntu的防火墙</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw <span class="built_in">enable</span> <span class="comment">#开启</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在WSL环境下，可能会得到如下提示：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 427, <span class="keyword">in</span> under_ssh</span><br><span class="line">    ppid = get_ppid(pid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 421, <span class="keyword">in</span> get_ppid</span><br><span class="line">    <span class="built_in">return</span> int(ppid)</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() with base 10: <span class="string">&#x27;S&#x27;</span></span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;/usr/sbin/ufw&quot;</span>, line 138, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    not ui.continue_under_ssh():</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/frontend.py&quot;</span>, line 901, <span class="keyword">in</span> continue_under_ssh</span><br><span class="line">    <span class="keyword">if</span> self.backend.do_checks and ufw.util.under_ssh(): <span class="comment"># pragma: no cover</span></span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  [Previous line repeated 1 more time]</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 434, <span class="keyword">in</span> under_ssh</span><br><span class="line">    raise ValueError(err_msg)</span><br><span class="line">ValueError: Couldn<span class="string">&#x27;t find parent pid for &#x27;</span>3129<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>这是因为<code>/usr/lib/python3/dist-packages/ufw/util.py</code>中有一行Python出现错误</p>
+<p>更正方法是进入中：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /usr/lib/python3/dist-packages/ufw/util.py</span><br></pre></td></tr></table></figure></div>
+
+<p>将</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">ppid = <span class="built_in">open</span>(name).readlines()[<span class="number">0</span>].split(<span class="string">&#x27;)&#x27;</span>)[<span class="number">1</span>].split()[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
+
+<p>改为</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">ppid = <span class="built_in">open</span>(name).readlines()[<span class="number">0</span>].rsplit(<span class="string">&#x27;)&#x27;</span>,<span class="number">1</span>)[<span class="number">1</span>].split()[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
+
+<p>即可</p>
+<p>之后添加允许访问的端口<code>3306</code>并重载生效即可</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw allow 3306</span><br><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure></div>
+
+<p>完成后查看</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure></div>
+
+<p>得到如下结果即为成功</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">To                         Action      From</span><br><span class="line">--                         ------      ----</span><br><span class="line">3306                       ALLOW       Anywhere</span><br><span class="line">3306 (v6)                  ALLOW       Anywhere (v6)</span><br></pre></td></tr></table></figure></div>
+
+<p>这时再使用Navicat访问，即可连接上WSL的MySQL服务。</p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Kali WSL</title>
+    <url>/2023/11/30/How-to-install-Kali-WSL/</url>
+    <content><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>Kali WSL（Windows Subsystem for Linux）是在 Windows 环境下运行 Kali Linux 的一种方式，同时，WSL相比于Linux虚拟机能和Windows较好的进行文件系统的互通，非常适合用于学习。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-开启-WSL-功能"><a href="#1-开启-WSL-功能" class="headerlink" title="1. 开启 WSL 功能"></a>1. 开启 WSL 功能</h3><p>确保系统为 Windows 10 专业版，然后按照以下步骤开启 WSL 功能：</p>
+<ul>
+<li><p>打开控制面板</p>
+</li>
+<li><p>进入程序 -&gt; 启用或关闭 Windows 功能</p>
+</li>
+<li><p>勾选”适用于 Linux 的 Windows 子系统”</p>
+</li>
+<li><p>系统更新并重启生效</p>
+</li>
+</ul>
+<h3 id="2-安装-Kali-WSL"><a href="#2-安装-Kali-WSL" class="headerlink" title="2. 安装 Kali WSL"></a>2. 安装 Kali WSL</h3><p>在 Windows 应用商店中搜索并下载适用于 Linux 的 Windows 子系统，选择 Kali 作为 Linux 发行版进行安装。</p>
+<h3 id="3-升级到-WSL2"><a href="#3-升级到-WSL2" class="headerlink" title="3. 升级到 WSL2"></a>3. 升级到 WSL2</h3><p>由于版本问题，确保升级到 WSL2，执行以下命令：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart wsl --set-version kali-linux 2</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4-安装完整版-Kali"><a href="#4-安装完整版-Kali" class="headerlink" title="4. 安装完整版 Kali"></a>4. 安装完整版 Kali</h3><p>安装完成后，打开 Kali Linux ，根据设置用户名及密码。</p>
+<p>重新启动 Kali Linux ，这时我们发现我们的 Kali Linux 还有很多工具没用安装。</p>
+<p>执行以下命令安装 Kali 的完整版：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y kali-linux-large</span><br></pre></td></tr></table></figure></div>
+<h3 id="6-配置图形化桌面并连接（可选）"><a href="#6-配置图形化桌面并连接（可选）" class="headerlink" title="6. 配置图形化桌面并连接（可选）"></a>6. 配置图形化桌面并连接（可选）</h3><p>如果想要体验图形化界面，可以选择安装 Win-KeX</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install -y kali-win-kex</span><br></pre></td></tr></table></figure></div>
+
+<p>打开 Window Mode (窗口模式)</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --win</span><br></pre></td></tr></table></figure></div>
+
+<p>如果你想要体验 Seamless Mode (无缝模式)，还需要额外安装 <a class="link"   href="https://x410.dev/" >X410 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>安装完成后打开并勾选<code>ACCESS CONTROL</code>下的<code>WSL2</code>选项。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/How-to-install-Kali-WSL/X410-Settings.png"
+                     
+                ></p>
+<p>打开 Seamless Mode (窗口模式)</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --sl</span><br></pre></td></tr></table></figure></div>
+
+<p>详细教程:<a class="link"   href="https://x410.dev/cookbook/wsl/protecting-x410-public-access-for-wsl2-via-windows-defender-firewall/" >Protecting X410 Public Access for WSL2 via Windows Defender Firewall - X410.dev <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="7-额外配置（可选）"><a href="#7-额外配置（可选）" class="headerlink" title="7. 额外配置（可选）"></a>7. 额外配置（可选）</h3><p>根据需求，可以配置 Windows Terminal，将 Kali 和 Win-KeX 整合进 Terminal。</p>
+<p>以下是我的配置文件(仅留下 Kali WSL 相关配置)</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;list&quot;</span><span class="punctuation">:</span></span><br><span class="line">		<span class="punctuation">[</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;46ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kali Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Wsl&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Window Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Seamless Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --sl --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">]</span></span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>杂项做题笔记</title>
     <url>/2023/12/05/Notes-on-Misc/</url>
     <content><![CDATA[<h3 id="1-CTF工具使用"><a href="#1-CTF工具使用" class="headerlink" title="1 CTF工具使用"></a>1 CTF工具使用</h3><h4 id="1-1-stegsolve"><a href="#1-1-stegsolve" class="headerlink" title="1.1  stegsolve"></a>1.1  <a class="link"   href="http://www.caesum.com/handbook/Stegsolve.jar" >stegsolve <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开<code>Stegsolve</code>图片隐写解析器</p>
@@ -183,23 +285,23 @@
 <p>再用<code>stegsolve</code>试试？</p>
 <p>一无所获…</p>
 <p>或许这并不全是<code>png</code>文件?用<code>binwalk</code>命令分析一下</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ binwalk QR_code.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 280 x 280, 1-bit colormap, non-interlaced</span><br><span class="line">471           0x1D7           Zip archive data, encrypted at least v2.0 to extract, compressed size: 29, uncompressed size: 15, name: 4number.txt</span><br><span class="line">650           0x28A           End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ binwalk QR_code.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 280 x 280, 1-bit colormap, non-interlaced</span><br><span class="line">471           0x1D7           Zip archive data, encrypted at least v2.0 to extract, compressed size: 29, uncompressed size: 15, name: 4number.txt</span><br><span class="line">650           0x28A           End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
 
 <p>发现里面还藏了个zip文件，使用<code>foremost</code>分离隐藏文件</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ foremost ./QR_code.png </span><br><span class="line"></span><br><span class="line">Processing: ./QR_code.png</span><br><span class="line">�foundat=4number.txtn</span><br><span class="line">Qjxu�J����[����OPF4L�</span><br><span class="line">*|</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ foremost ./QR_code.png </span><br><span class="line"></span><br><span class="line">Processing: ./QR_code.png</span><br><span class="line">�foundat=4number.txtn</span><br><span class="line">Qjxu�J����[����OPF4L�</span><br><span class="line">*|</span><br></pre></td></tr></table></figure></div>
 
 <p>进入<code>output</code>文件夹中</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output]</span><br><span class="line">└─$ <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">audit.txt  png  zip</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output]</span><br><span class="line">└─$ <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">audit.txt  png  zip</span><br></pre></td></tr></table></figure></div>
 
 <p>在<code>zip</code>文件夹里有一个<code>00000000.zip</code>文件，但是需要密码，由<code>4number.txt</code>的提示我们可以猜测密码由四位数字组成，尝试使用<code>fcrackzip</code>暴力破解:</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ fcrackzip -b -c1 -l 1-4 -u 00000000.zip                                                           </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PASSWORD FOUND!!!!: pw == 7639</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ fcrackzip -b -c1 -l 1-4 -u 00000000.zip                                                           </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PASSWORD FOUND!!!!: pw == 7639</span><br></pre></td></tr></table></figure></div>
 
 <p>得到密码为<code>7639</code>，解压文件<code>00000000.zip</code></p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ unzip 00000000.zip </span><br><span class="line">Archive:  00000000.zip</span><br><span class="line">[00000000.zip] 4number.txt password: </span><br><span class="line">  inflating: 4number.txt             </span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">ls</span>                                                                                                </span><br><span class="line">00000000.zip  4number.txt</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">cat</span> ./4number.txt                                                                                 </span><br><span class="line">CTF&#123;vjpw_wnoei&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ unzip 00000000.zip </span><br><span class="line">Archive:  00000000.zip</span><br><span class="line">[00000000.zip] 4number.txt password: </span><br><span class="line">  inflating: 4number.txt             </span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">ls</span>                                                                                                </span><br><span class="line">00000000.zip  4number.txt</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">cat</span> ./4number.txt                                                                                 </span><br><span class="line">CTF&#123;vjpw_wnoei&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>成功获得<code>flag&#123;vjpw_wnoei&#125;</code></p>
 <h4 id="Misc-大白"><a href="#Misc-大白" class="headerlink" title="Misc-大白"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD" >Misc-大白 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开图片，发现无法正常打开(Kali系统下)，用<code>binwalk</code>命令查看图片文件</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/dabai]</span><br><span class="line">└─$ binwalk ./dabai.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 679 x 256, 8-bit/color RGBA, non-interlaced</span><br><span class="line">91            0x5B            Zlib compressed data, compressed</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/dabai]</span><br><span class="line">└─$ binwalk ./dabai.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 679 x 256, 8-bit/color RGBA, non-interlaced</span><br><span class="line">91            0x5B            Zlib compressed data, compressed</span><br></pre></td></tr></table></figure></div>
 
 <p>发现还有一段数据未使用，可能是PNG文件头中宽高设置不正确</p>
 <blockquote>
@@ -208,7 +310,7 @@
 <p>使用如下<code>Python</code>脚本获取图片真实大小</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="comment">#文件名</span></span><br><span class="line">filename = <span class="string">&quot;dabai.png&quot;</span></span><br><span class="line"><span class="comment">#图片当前CRC(29-32位)</span></span><br><span class="line">CRC = <span class="number">0x6d7c7135</span></span><br><span class="line"></span><br><span class="line">crcbp = <span class="built_in">open</span>(filename, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        data = crcbp[<span class="number">12</span>:<span class="number">16</span>] + \</span><br><span class="line">            struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, i) + struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, j) + crcbp[<span class="number">24</span>:<span class="number">29</span>]</span><br><span class="line">        crc32 = binascii.crc32(data) &amp; <span class="number">0xffffffff</span></span><br><span class="line">        <span class="keyword">if</span> (crc32 == CRC):</span><br><span class="line">            <span class="built_in">print</span>(i, j)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;hex:&#x27;</span>, <span class="built_in">hex</span>(i), <span class="built_in">hex</span>(j))</span><br></pre></td></tr></table></figure></div>
 
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Tools/Misc]</span><br><span class="line">└─$ python calc_pic_size.py </span><br><span class="line">679 479</span><br><span class="line">hex: 0x2a7 0x1df</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Tools/Misc]</span><br><span class="line">└─$ python calc_pic_size.py </span><br><span class="line">679 479</span><br><span class="line">hex: 0x2a7 0x1df</span><br></pre></td></tr></table></figure></div>
 
 <p>打开十六进制编辑器, 将<code>10 - 17</code>位设置为正确值:</p>
 <p><img  
@@ -235,7 +337,7 @@
 <h4 id="Misc-zip伪加密"><a href="#Misc-zip伪加密" class="headerlink" title="Misc-zip伪加密"></a><a class="link"   href="https://buuoj.cn/challenges#zip%E4%BC%AA%E5%8A%A0%E5%AF%86" >Misc-zip伪加密 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>下载文件，先解压</p>
 <p>? 怎么加密了</p>
 <p>先<code>binwalk</code>看看文件结构，看看有没有藏些什么提示</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/zip伪加密]</span><br><span class="line">└─$ binwalk ./ee2f7f26-5173-4e7a-8ea4-e4945e6f04ff.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             Zip archive data, encrypted at least v2.0 to extract, compressed size: 25, uncompressed size: 23, name: flag.txt</span><br><span class="line">153           0x99            End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/zip伪加密]</span><br><span class="line">└─$ binwalk ./ee2f7f26-5173-4e7a-8ea4-e4945e6f04ff.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             Zip archive data, encrypted at least v2.0 to extract, compressed size: 25, uncompressed size: 23, name: flag.txt</span><br><span class="line">153           0x99            End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
 
 <p>好吧并没有…</p>
 <p>考虑到标题是zip伪加密，查了查<a class="link"   href="https://docs.fileformat.com/compression/zip/" >zip的文件结构 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
@@ -415,10 +517,10 @@
                 ></p>
 <h4 id="Misc-FLAG"><a href="#Misc-FLAG" class="headerlink" title="Misc-FLAG"></a><a class="link"   href="https://buuoj.cn/challenges#FLAG" >Misc-FLAG <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开<code>Stegsolve</code>，使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0, LSB First</code>并<code>Save Bin</code>保存为zip文件并解压</p>
 <p>执行<code>1</code>文件，可以找到<code>hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</code>字样</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ <span class="built_in">chmod</span> +x 1</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ ./1</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ <span class="built_in">chmod</span> +x 1</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ ./1</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>或者用<code>strings</code>命令扫描文件</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/FLAG]</span><br><span class="line">└─$ strings 1 | grep hctf</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/FLAG]</span><br><span class="line">└─$ strings 1 | grep hctf</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>或者用<code>ghidra</code>反编译二进制文件，找到<code>main</code>函数查看代码，发现</p>
 <div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -451,7 +553,7 @@
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>再使用命令破解</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/基础破解]</span><br><span class="line">└─$ rarcrack »ù´¡ÆÆ½â.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking »ù´¡ÆÆ½â.rar, status file: »ù´¡ÆÆ½â.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;2563&#x27;</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/基础破解]</span><br><span class="line">└─$ rarcrack »ù´¡ÆÆ½â.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking »ù´¡ÆÆ½â.rar, status file: »ù´¡ÆÆ½â.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;2563&#x27;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>解压获得<code>flag.txt</code></p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ZmxhZ3s3MDM1NDMwMGE1MTAwYmE3ODA2ODgwNTY2MWI5M2E1Y30=</span><br></pre></td></tr></table></figure></div>
@@ -464,7 +566,7 @@
 <p>查询盲文表并解密，得到<code>kmdonowg</code></p>
 <p>尝试以此为密码解压文件，发现解压不成功</p>
 <p>通过<code>binwalk</code>指令扫描文件，提示这是一个<code>rar</code>文件</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/假如给我三天光明]</span><br><span class="line">└─$ binwalk music.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             RAR archive data, version 4.x, first volume <span class="built_in">type</span>: MAIN_HEAD</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/假如给我三天光明]</span><br><span class="line">└─$ binwalk music.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             RAR archive data, version 4.x, first volume <span class="built_in">type</span>: MAIN_HEAD</span><br></pre></td></tr></table></figure></div>
 
 <p>将文件名改为<code>music.rar</code>，以<code>kmdonowg</code>为密码尝试再次解压</p>
 <p>得到一个音频文件，使用<code>Audacity</code>打开文件，获得一段摩斯电码</p>
@@ -479,7 +581,7 @@
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>再使用命令破解</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/rar]</span><br><span class="line">└─$ rarcrack dianli_jbctf_MISC_T10076_20150707_rar.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking dianli_jbctf_MISC_T10076_20150707_rar.rar, status file: dianli_jbctf_MISC_T10076_20150707_rar.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">Probing: <span class="string">&#x27;1488&#x27;</span> [492 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;3120&#x27;</span> [544 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;4724&#x27;</span> [534 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;6313&#x27;</span> [529 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;7947&#x27;</span> [544 pwds/sec]</span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;8795&#x27;</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/rar]</span><br><span class="line">└─$ rarcrack dianli_jbctf_MISC_T10076_20150707_rar.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking dianli_jbctf_MISC_T10076_20150707_rar.rar, status file: dianli_jbctf_MISC_T10076_20150707_rar.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">Probing: <span class="string">&#x27;1488&#x27;</span> [492 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;3120&#x27;</span> [544 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;4724&#x27;</span> [534 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;6313&#x27;</span> [529 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;7947&#x27;</span> [544 pwds/sec]</span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;8795&#x27;</span></span><br></pre></td></tr></table></figure></div>
 
 <p>解压获得<code>flag.txt</code></p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">flag&#123;1773c5da790bd3caff38e3decd180eb7&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
@@ -488,108 +590,6 @@
       </categories>
       <tags>
         <tag>WP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Go语言获得Cravatar头像服务网址</title>
-    <url>/2023/09/30/Go-use-cravatar/</url>
-    <content><![CDATA[<p><del>Cravatar真是个好东西</del></p>
-<p>这是Cravatar图像请求的Go语言实现，具体的加密方式请查阅<a class="link"   href="https://cravatar.com/developer/api" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;crypto/md5&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// Hash值获取方式 先删除前导和尾随的空格，再将所有字符置为小写，最后进行MD5加密</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hash</span><span class="params">(email <span class="type">string</span>)</span></span> [<span class="number">16</span>]<span class="type">byte</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> md5.Sum([]<span class="type">byte</span>(strings.ToLower(strings.TrimFunc(email, <span class="function"><span class="keyword">func</span><span class="params">(r <span class="type">rune</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> r == <span class="string">&#x27; &#x27;</span></span><br><span class="line">    &#125;))))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 头像获取地址为 https://cravatar.cn/avatar/&#123;HASH&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmailToCravatarURL</span><span class="params">(email <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">&quot;https://cravatar.cn/avatar/%x&quot;</span>, Hash(email))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 试试效果！</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(EmailToCravatarURL(&#123;Your email here&#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-        <tag>头像服务</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何使用Navicat连接WSL里的MySQL服务</title>
-    <url>/2023/08/02/How-to-use-Navicat-to-connect-to-MySQL-services-in-WSL/</url>
-    <content><![CDATA[<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h3><p>真的有人会干这么套娃的事情吗？</p>
-<p><del>原来是我啊，那没事了</del></p>
-<p>究其原因，还是由于之前技术不精，在Windows系统上安装MySQL，结果MySQL炸了，而且还没办法卸载干净，这次想着既然VSCode可以与WSL连接，为何Navicat不能与WSL里的MySQL连接呢？</p>
-<p>而且照<a class="link"   href="https://github.com/XCloudFance" >XCloudFance <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>学长的说法：“你可以把WSL想象是里面的一台电脑，你的Windows也是一台独立的电脑”，那么navicat理论上应该可以与WSL中的MySQL连接。</p>
-<p>于是，痛苦的两个小时配置之旅就开始了(中途还重装了一次WSL qwq)</p>
-<h3 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1 前期准备"></a>1 前期准备</h3><h4 id="1-1-安装Navicat"><a href="#1-1-安装Navicat" class="headerlink" title="1.1 安装Navicat"></a>1.1 安装Navicat</h4><p>自行Baidu&#x2F;Google&#x2F;Bing下载安装包</p>
-<p>安装包打开后一路next即可</p>
-<h4 id="1-2-安装WSL"><a href="#1-2-安装WSL" class="headerlink" title="1.2 安装WSL"></a>1.2 安装WSL</h4><p>Baidu&#x2F;Google&#x2F;Bing</p>
-<p>**注意:**记得将WSL版本设置为WSL2，本人使用的系统是Ubuntu22.04</p>
-<h4 id="1-3-在WSL中安装MySQL"><a href="#1-3-在WSL中安装MySQL" class="headerlink" title="1.3 在WSL中安装MySQL"></a>1.3 在WSL中安装MySQL</h4><p>在WSL终端中输入</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br></pre></td></tr></table></figure></div>
-
-<p>即可，<code>root</code>及其余账户密码配置请自行百度</p>
-<h3 id="2-正式开始吧！"><a href="#2-正式开始吧！" class="headerlink" title="2 正式开始吧！"></a>2 正式开始吧！</h3><h4 id="2-1-找到WSL的IP地址"><a href="#2-1-找到WSL的IP地址" class="headerlink" title="2.1 找到WSL的IP地址"></a>2.1 找到WSL的IP地址</h4><p>首先，我们应该让Windows主机能够访问WSL，那么我们就应该先知道WSL的本地IP访问地址。</p>
-<p>在Windows下打开终端(Power Shell)，使用如下命令查询：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure></div>
-
-<p>可以看到这样一行提示：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">以太网适配器 vEthernet (WSL):</span><br><span class="line"></span><br><span class="line">   连接特定的 DNS 后缀 . . . . . . . :</span><br><span class="line">   本地链接 IPv6 地址. . . . . . . . : fe80::85d4:3cdb:df1f:f6e1%42</span><br><span class="line">   IPv4 地址 . . . . . . . . . . . . : 172.30.224.1</span><br><span class="line">   子网掩码  . . . . . . . . . . . . : 255.255.240.0</span><br><span class="line">   默认网关. . . . . . . . . . . . . :</span><br></pre></td></tr></table></figure></div>
-
-<p>说明主机其实是能够访问到WSL的。</p>
-<p>在WSL的终端中，使用<code>ifconfig</code>查询本地IP地址</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure></div>
-
-<p>有可能需要使用如下指令安装<code>net-tools</code>：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install net-tools</span><br></pre></td></tr></table></figure></div>
-
-<p>安装成功后，运行<code>ifconfig</code>会输出类似下面的结果：</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 172.30.224.99  netmask 255.255.240.0  broadcast 172.30.239.255</span><br><span class="line">        inet6 fe80::215:5dff:fe99:f76a  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether 00:15:5d:99:f7:6a  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 104254  bytes 266388818 (266.3 MB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 69925  bytes 5218621 (5.2 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536</span><br><span class="line">        inet 127.0.0.1  netmask 255.0.0.0</span><br><span class="line">        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;</span><br><span class="line">        loop  txqueuelen 1000  (Local Loopback)</span><br><span class="line">        RX packets 5644  bytes 29799099 (29.7 MB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 5644  bytes 29799099 (29.7 MB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br></pre></td></tr></table></figure></div>
-
-<p>第二行的<code>172.30.224.99</code>便是你的WSL的本地IP地址。</p>
-<h3 id="2-2-设置MySQL被局域网访问"><a href="#2-2-设置MySQL被局域网访问" class="headerlink" title="2.2 设置MySQL被局域网访问"></a>2.2 设置MySQL被局域网访问</h3><p>这时我们可以试着用Navicat连接一下刚才获得IP地址的WSL的MySQL服务，发现Navicat显示连接失败，这是因为我们未设置MySQL能被局域网访问。</p>
-<p>进入MySQL中，修改账户的访问权限：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p &lt;password&gt;</span><br><span class="line">mysql-&gt;use mysql</span><br><span class="line">mysql-&gt;update user set host = &#x27;%&#x27; where user =&#x27;root&#x27;;</span><br><span class="line">mysql-&gt;grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; with grant option;</span><br><span class="line">mysql-&gt;flush privileges;</span><br><span class="line">mysql-&gt;exit;</span><br></pre></td></tr></table></figure></div>
-
-<p>找到MySQL的配置文件进行修改:</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure></div>
-
-<p>在<code>mysqld.cnf</code>中，找到这样一行配置：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure></div>
-
-<p>修改为：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">bind-address = 0.0.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>保存后重启MySQL：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure></div>
-
-<p>可以通过<code>netstat -aptn</code>检查MySQL的状态</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">(Not all processes could be identified, non-owned process info</span><br><span class="line"> will not be shown, you would have to be root to see it all.)</span><br><span class="line">Active Internet connections (servers and established)</span><br><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</span><br><span class="line">tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="2-3-设置Ubuntu防火墙"><a href="#2-3-设置Ubuntu防火墙" class="headerlink" title="2.3 设置Ubuntu防火墙"></a>2.3 设置Ubuntu防火墙</h3><p>此时我们还是无法连接，还需关闭Ubuntu的防火墙</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw <span class="built_in">enable</span> <span class="comment">#开启</span></span><br></pre></td></tr></table></figure></div>
-
-<p>在WSL环境下，可能会得到如下提示：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 427, <span class="keyword">in</span> under_ssh</span><br><span class="line">    ppid = get_ppid(pid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 421, <span class="keyword">in</span> get_ppid</span><br><span class="line">    <span class="built_in">return</span> int(ppid)</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() with base 10: <span class="string">&#x27;S&#x27;</span></span><br><span class="line"></span><br><span class="line">During handling of the above exception, another exception occurred:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;/usr/sbin/ufw&quot;</span>, line 138, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    not ui.continue_under_ssh():</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/frontend.py&quot;</span>, line 901, <span class="keyword">in</span> continue_under_ssh</span><br><span class="line">    <span class="keyword">if</span> self.backend.do_checks and ufw.util.under_ssh(): <span class="comment"># pragma: no cover</span></span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 457, <span class="keyword">in</span> under_ssh</span><br><span class="line">    <span class="built_in">return</span> under_ssh(ppid)</span><br><span class="line">  [Previous line repeated 1 more time]</span><br><span class="line">  File <span class="string">&quot;/usr/lib/python3/dist-packages/ufw/util.py&quot;</span>, line 434, <span class="keyword">in</span> under_ssh</span><br><span class="line">    raise ValueError(err_msg)</span><br><span class="line">ValueError: Couldn<span class="string">&#x27;t find parent pid for &#x27;</span>3129<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>这是因为<code>/usr/lib/python3/dist-packages/ufw/util.py</code>中有一行Python出现错误</p>
-<p>更正方法是进入中：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /usr/lib/python3/dist-packages/ufw/util.py</span><br></pre></td></tr></table></figure></div>
-
-<p>将</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">ppid = <span class="built_in">open</span>(name).readlines()[<span class="number">0</span>].split(<span class="string">&#x27;)&#x27;</span>)[<span class="number">1</span>].split()[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
-
-<p>改为</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">ppid = <span class="built_in">open</span>(name).readlines()[<span class="number">0</span>].rsplit(<span class="string">&#x27;)&#x27;</span>,<span class="number">1</span>)[<span class="number">1</span>].split()[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
-
-<p>即可</p>
-<p>之后添加允许访问的端口<code>3306</code>并重载生效即可</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw allow 3306</span><br><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure></div>
-
-<p>完成后查看</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure></div>
-
-<p>得到如下结果即为成功</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">Status: active</span><br><span class="line"></span><br><span class="line">To                         Action      From</span><br><span class="line">--                         ------      ----</span><br><span class="line">3306                       ALLOW       Anywhere</span><br><span class="line">3306 (v6)                  ALLOW       Anywhere (v6)</span><br></pre></td></tr></table></figure></div>
-
-<p>这时再使用Navicat访问，即可连接上WSL的MySQL服务。</p>
-]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
