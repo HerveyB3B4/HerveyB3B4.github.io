@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Go语言获得Cravatar头像服务网址</title>
-    <url>/2023/09/30/Go-use-cravatar/</url>
-    <content><![CDATA[<p><del>Cravatar真是个好东西</del></p>
-<p>这是Cravatar图像请求的Go语言实现，具体的加密方式请查阅<a class="link"   href="https://cravatar.com/developer/api" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;crypto/md5&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// Hash值获取方式 先删除前导和尾随的空格，再将所有字符置为小写，最后进行MD5加密</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hash</span><span class="params">(email <span class="type">string</span>)</span></span> [<span class="number">16</span>]<span class="type">byte</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> md5.Sum([]<span class="type">byte</span>(strings.ToLower(strings.TrimFunc(email, <span class="function"><span class="keyword">func</span><span class="params">(r <span class="type">rune</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> r == <span class="string">&#x27; &#x27;</span></span><br><span class="line">    &#125;))))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 头像获取地址为 https://cravatar.cn/avatar/&#123;HASH&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmailToCravatarURL</span><span class="params">(email <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">&quot;https://cravatar.cn/avatar/%x&quot;</span>, Hash(email))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 试试效果！</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(EmailToCravatarURL(&#123;Your email here&#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+    <title>安装Kali WSL</title>
+    <url>/2023/11/30/How-to-install-Kali-WSL/</url>
+    <content><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>Kali WSL（Windows Subsystem for Linux）是在 Windows 环境下运行 Kali Linux 的一种方式，同时，WSL相比于Linux虚拟机能和Windows较好的进行文件系统的互通，非常适合用于学习。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-开启-WSL-功能"><a href="#1-开启-WSL-功能" class="headerlink" title="1. 开启 WSL 功能"></a>1. 开启 WSL 功能</h3><p>确保系统为 Windows 10 专业版，然后按照以下步骤开启 WSL 功能：</p>
+<ul>
+<li><p>打开控制面板</p>
+</li>
+<li><p>进入程序 -&gt; 启用或关闭 Windows 功能</p>
+</li>
+<li><p>勾选”适用于 Linux 的 Windows 子系统”</p>
+</li>
+<li><p>系统更新并重启生效</p>
+</li>
+</ul>
+<h3 id="2-安装-Kali-WSL"><a href="#2-安装-Kali-WSL" class="headerlink" title="2. 安装 Kali WSL"></a>2. 安装 Kali WSL</h3><p>在 Windows 应用商店中搜索并下载适用于 Linux 的 Windows 子系统，选择 Kali 作为 Linux 发行版进行安装。</p>
+<h3 id="3-升级到-WSL2"><a href="#3-升级到-WSL2" class="headerlink" title="3. 升级到 WSL2"></a>3. 升级到 WSL2</h3><p>由于版本问题，确保升级到 WSL2，执行以下命令：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart wsl --set-version kali-linux 2</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4-安装完整版-Kali"><a href="#4-安装完整版-Kali" class="headerlink" title="4. 安装完整版 Kali"></a>4. 安装完整版 Kali</h3><p>安装完成后，打开 Kali Linux ，根据设置用户名及密码。</p>
+<p>重新启动 Kali Linux ，这时我们发现我们的 Kali Linux 还有很多工具没用安装。</p>
+<p>执行以下命令安装 Kali 的完整版：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y kali-linux-large</span><br></pre></td></tr></table></figure></div>
+<h3 id="6-配置图形化桌面并连接（可选）"><a href="#6-配置图形化桌面并连接（可选）" class="headerlink" title="6. 配置图形化桌面并连接（可选）"></a>6. 配置图形化桌面并连接（可选）</h3><p>如果想要体验图形化界面，可以选择安装 Win-KeX</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install -y kali-win-kex</span><br></pre></td></tr></table></figure></div>
+
+<p>打开 Window Mode (窗口模式)</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --win</span><br></pre></td></tr></table></figure></div>
+
+<p>如果你想要体验 Seamless Mode (无缝模式)，还需要额外安装 <a class="link"   href="https://x410.dev/" >X410 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>安装完成后打开并勾选<code>ACCESS CONTROL</code>下的<code>WSL2</code>选项。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/How-to-install-Kali-WSL/X410-Settings.png"
+                     
+                ></p>
+<p>打开 Seamless Mode (窗口模式)</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --sl</span><br></pre></td></tr></table></figure></div>
+
+<p>详细教程:<a class="link"   href="https://x410.dev/cookbook/wsl/protecting-x410-public-access-for-wsl2-via-windows-defender-firewall/" >Protecting X410 Public Access for WSL2 via Windows Defender Firewall - X410.dev <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="7-额外配置（可选）"><a href="#7-额外配置（可选）" class="headerlink" title="7. 额外配置（可选）"></a>7. 额外配置（可选）</h3><p>根据需求，可以配置 Windows Terminal，将 Kali 和 Win-KeX 整合进 Terminal。</p>
+<p>以下是我的配置文件(仅留下 Kali WSL 相关配置)</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;list&quot;</span><span class="punctuation">:</span></span><br><span class="line">		<span class="punctuation">[</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;46ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kali Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Wsl&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Window Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Seamless Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --sl --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">]</span></span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
-        <category>后端</category>
+        <category>CTF</category>
       </categories>
       <tags>
-        <tag>Go</tag>
-        <tag>头像服务</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -111,6 +148,363 @@
       </tags>
   </entry>
   <entry>
+    <title>杂项做题笔记</title>
+    <url>/2023/12/05/Notes-on-Misc/</url>
+    <content><![CDATA[<h3 id="1-CTF工具使用"><a href="#1-CTF工具使用" class="headerlink" title="1 CTF工具使用"></a>1 CTF工具使用</h3><h4 id="1-1-stegsolve"><a href="#1-1-stegsolve" class="headerlink" title="1.1  stegsolve"></a>1.1  <a class="link"   href="http://www.caesum.com/handbook/Stegsolve.jar" >stegsolve <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开<code>Stegsolve</code>图片隐写解析器</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ java -jar Stegsolve.jar</span><br></pre></td></tr></table></figure></div>
+<h3 id="2-练习记录"><a href="#2-练习记录" class="headerlink" title="2 练习记录"></a>2 练习记录</h3><h4 id="Misc-金三胖"><a href="#Misc-金三胖" class="headerlink" title="Misc-金三胖"></a><a class="link"   href="https://buuoj.cn/challenges#%E9%87%91%E4%B8%89%E8%83%96" >Misc-金三胖 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>在<code>File &gt;&gt; Open</code>中打开<code>gif</code>文件</p>
+<p>使用<code>Analyse &gt;&gt; Frame</code>逐帧查看</p>
+<p>在第<code>21,51,79</code>帧寻找到<code>flag</code>片段，将其组合在一起获得<code>flag&#123;he11ohongke&#125;</code></p>
+<h4 id="Misc-LSB"><a href="#Misc-LSB" class="headerlink" title="Misc-LSB"></a><a class="link"   href="https://buuoj.cn/challenges#LSB" >Misc-LSB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>在<code>File &gt;&gt; Open</code>中打开<code>png</code>文件</p>
+<p>发现在<code>Red plane 0</code>, <code>Green plane 0</code>, <code>Blue plane 0</code>的模式下图片上方有一段色块异常</p>
+<p>使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0, LSB First</code>并<code>Save Bin</code>保存为图片</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/flag.png"
+                      alt="[flag.png]"
+                ></p>
+<p>打开该图片得到一个二维码, 使用<code>QR Research</code>扫描获得: <code>flag&#123;1sb_i4_s0_Ea4y&#125;</code></p>
+<h4 id="Misc-镜子里面的世界"><a href="#Misc-镜子里面的世界" class="headerlink" title="Misc-镜子里面的世界"></a><a class="link"   href="https://buuoj.cn/challenges#%E9%95%9C%E5%AD%90%E9%87%8C%E9%9D%A2%E7%9A%84%E4%B8%96%E7%95%8C" >Misc-镜子里面的世界 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>在<code>File &gt;&gt; Open</code>中打开<code>png</code>文件</p>
+<p>发现在<code>Red plane 0</code>, <code>Green plane 0</code>, <code>Blue plane 0</code>的模式下图片全黑</p>
+<p>使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0</code>，得到如下文本</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">4865792049207468 696e6b2077652063  Hey I th ink we c</span><br><span class="line">616e207772697465 20736166656c7920  an write  safely </span><br><span class="line">696e207468697320 66696c6520776974  in this  file wit</span><br><span class="line">686f757420616e79 6f6e652073656569  hout any one seei</span><br><span class="line">6e672069742e2041 6e797761792c2074  ng it. A nyway, t</span><br><span class="line">6865207365637265 74206b6579206973  he secre t key is</span><br><span class="line">3a2073743367305f 7361757275735f77  : st3g0_ saurus_w</span><br><span class="line">7233636b73000000 0000000000000000  r3cks... ........</span><br></pre></td></tr></table></figure></div>
+
+<p>获得<code>flag&#123;st3g0_saurus_wr3cks&#125;</code></p>
+<h4 id="Misc-二维码"><a href="#Misc-二维码" class="headerlink" title="Misc-二维码"></a><a class="link"   href="https://buuoj.cn/challenges#%E4%BA%8C%E7%BB%B4%E7%A0%81" >Misc-二维码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>下载文件并解压获得<code>QR_code.png</code></p>
+<p>看起来是个二维码？用<code>QR Research</code>扫描一下看:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+                      alt="[Misc-二维码.png]"
+                ></p>
+<p>好吧什么都没有…</p>
+<p>再用<code>stegsolve</code>试试？</p>
+<p>一无所获…</p>
+<p>或许这并不全是<code>png</code>文件?用<code>binwalk</code>命令分析一下</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ binwalk QR_code.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 280 x 280, 1-bit colormap, non-interlaced</span><br><span class="line">471           0x1D7           Zip archive data, encrypted at least v2.0 to extract, compressed size: 29, uncompressed size: 15, name: 4number.txt</span><br><span class="line">650           0x28A           End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+
+<p>发现里面还藏了个zip文件，使用<code>foremost</code>分离隐藏文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ foremost ./QR_code.png </span><br><span class="line"></span><br><span class="line">Processing: ./QR_code.png</span><br><span class="line">�foundat=4number.txtn</span><br><span class="line">Qjxu�J����[����OPF4L�</span><br><span class="line">*|</span><br></pre></td></tr></table></figure></div>
+
+<p>进入<code>output</code>文件夹中</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output]</span><br><span class="line">└─$ <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">audit.txt  png  zip</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>zip</code>文件夹里有一个<code>00000000.zip</code>文件，但是需要密码，由<code>4number.txt</code>的提示我们可以猜测密码由四位数字组成，尝试使用<code>fcrackzip</code>暴力破解:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ fcrackzip -b -c1 -l 1-4 -u 00000000.zip                                                           </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PASSWORD FOUND!!!!: pw == 7639</span><br></pre></td></tr></table></figure></div>
+
+<p>得到密码为<code>7639</code>，解压文件<code>00000000.zip</code></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ unzip 00000000.zip </span><br><span class="line">Archive:  00000000.zip</span><br><span class="line">[00000000.zip] 4number.txt password: </span><br><span class="line">  inflating: 4number.txt             </span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">ls</span>                                                                                                </span><br><span class="line">00000000.zip  4number.txt</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">cat</span> ./4number.txt                                                                                 </span><br><span class="line">CTF&#123;vjpw_wnoei&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>成功获得<code>flag&#123;vjpw_wnoei&#125;</code></p>
+<h4 id="Misc-大白"><a href="#Misc-大白" class="headerlink" title="Misc-大白"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD" >Misc-大白 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开图片，发现无法正常打开(Kali系统下)，用<code>binwalk</code>命令查看图片文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/dabai]</span><br><span class="line">└─$ binwalk ./dabai.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 679 x 256, 8-bit/color RGBA, non-interlaced</span><br><span class="line">91            0x5B            Zlib compressed data, compressed</span><br></pre></td></tr></table></figure></div>
+
+<p>发现还有一段数据未使用，可能是PNG文件头中宽高设置不正确</p>
+<blockquote>
+<p>PNG文件结构(<a class="link"   href="https://docs.fileformat.com/image/png/" >PNG File Format - Raster Image File <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>)<br>00 - 03 : Header <code>89 50 4E 47</code><br>08 - 0B : Length<br>0C - 0F : Chunk Type Code<br>10 - 13 : Width<br>14 - 17 : Height<br>1D - 20 : CRC</p>
+</blockquote>
+<p>使用如下<code>Python</code>脚本获取图片真实大小</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="comment">#文件名</span></span><br><span class="line">filename = <span class="string">&quot;dabai.png&quot;</span></span><br><span class="line"><span class="comment">#图片当前CRC(29-32位)</span></span><br><span class="line">CRC = <span class="number">0x6d7c7135</span></span><br><span class="line"></span><br><span class="line">crcbp = <span class="built_in">open</span>(filename, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        data = crcbp[<span class="number">12</span>:<span class="number">16</span>] + \</span><br><span class="line">            struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, i) + struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, j) + crcbp[<span class="number">24</span>:<span class="number">29</span>]</span><br><span class="line">        crc32 = binascii.crc32(data) &amp; <span class="number">0xffffffff</span></span><br><span class="line">        <span class="keyword">if</span> (crc32 == CRC):</span><br><span class="line">            <span class="built_in">print</span>(i, j)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;hex:&#x27;</span>, <span class="built_in">hex</span>(i), <span class="built_in">hex</span>(j))</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Tools/Misc]</span><br><span class="line">└─$ python calc_pic_size.py </span><br><span class="line">679 479</span><br><span class="line">hex: 0x2a7 0x1df</span><br></pre></td></tr></table></figure></div>
+
+<p>打开十六进制编辑器, 将<code>10 - 17</code>位设置为正确值:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%A4%A7%E7%99%BD.png"
+                      alt="[Misc-大白.png]"
+                ></p>
+<p>再次打开图片，即可获得<code>flag&#123;He1l0_d4_ba1&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/dabai.png"
+                      alt="[dabai.png]"
+                ></p>
+<h4 id="Misc-你竟然赶我走"><a href="#Misc-你竟然赶我走" class="headerlink" title="Misc-你竟然赶我走"></a><a class="link"   href="https://buuoj.cn/challenges#%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0" >Misc-你竟然赶我走 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>解压后发现一张图片，先用<code>Stegsolve</code>试试，尝试了一圈发现在某些模式下右下角有些变化，推测可能在文件尾有问题</p>
+<p>使用<code>010 Editor</code>打开文件，一直拉到最底下，获得<code>flag&#123;stego_is_s0_bor1ing&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0.png"
+                      alt="[Misc-你竟然赶我走.png]"
+                ></p>
+<h4 id="Misc-zip伪加密"><a href="#Misc-zip伪加密" class="headerlink" title="Misc-zip伪加密"></a><a class="link"   href="https://buuoj.cn/challenges#zip%E4%BC%AA%E5%8A%A0%E5%AF%86" >Misc-zip伪加密 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>下载文件，先解压</p>
+<p>? 怎么加密了</p>
+<p>先<code>binwalk</code>看看文件结构，看看有没有藏些什么提示</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/zip伪加密]</span><br><span class="line">└─$ binwalk ./ee2f7f26-5173-4e7a-8ea4-e4945e6f04ff.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             Zip archive data, encrypted at least v2.0 to extract, compressed size: 25, uncompressed size: 23, name: flag.txt</span><br><span class="line">153           0x99            End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+
+<p>好吧并没有…</p>
+<p>考虑到标题是zip伪加密，查了查<a class="link"   href="https://docs.fileformat.com/compression/zip/" >zip的文件结构 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>Local file header signature # 0x04034b50 (read as a little-endian number)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>Version needed to extract (minimum)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>General purpose bit flag</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>Compression method</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>File last modification time</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2</td>
+<td>File last modification date</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>CRC-32</td>
+</tr>
+<tr>
+<td>18</td>
+<td>4</td>
+<td>Compressed size</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4</td>
+<td>Uncompressed size</td>
+</tr>
+<tr>
+<td>26</td>
+<td>2</td>
+<td>File name length (n)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2</td>
+<td>Extra field length (m)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>n</td>
+<td>File Name</td>
+</tr>
+<tr>
+<td>30+n</td>
+<td>m</td>
+<td>Extra Field</td>
+</tr>
+</tbody></table>
+<p>其中<code>General purpose bit flag</code>为<code>00 00</code>时为未设置加密</p>
+<p>故修改 06 和 47 位的<code>09</code>为<code>00</code>即可无密码进行解压获得<code>flag.txt</code></p>
+<p>进而获得<code>flag&#123;Adm1N-B2G-kU-SZIP&#125;</code></p>
+<h4 id="Misc-BJDCTF2020-鸡你太美"><a href="#Misc-BJDCTF2020-鸡你太美" class="headerlink" title="Misc-[BJDCTF2020]鸡你太美"></a><a class="link"   href="https://buuoj.cn/challenges#[BJDCTF2020]%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E" >Misc-[BJDCTF2020]鸡你太美 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>使用十六进制编辑器打开两个文件，对比发现<code>篮球副本.gif</code>文件头缺少<code>GIF8(47 49 46 38)</code>字样，添加后就能正常打开了，进而获得<code>flag&#123;zhi_yin_you_are_beautiful&#125;</code></p>
+<h4 id="Misc-N种方法解决"><a href="#Misc-N种方法解决" class="headerlink" title="Misc-N种方法解决"></a><a class="link"   href="https://buuoj.cn/challenges#N%E7%A7%8D%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3" >Misc-N种方法解决 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>下载获得<code>KEY.exe</code>文件，点击无法运行</p>
+<p>使用Visual Studio Code打开，发现如下字样</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">data:image/jpg;base64,...</span><br></pre></td></tr></table></figure></div>
+
+<p>猜测是一个图片文件，后面的<code>...</code>为<code>base64</code>加密后的文件内容</p>
+<p>使用<a class="link"   href="https://the-x.cn/encodings/Base64.aspx" >在线解密网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>解密后保存为<code>png</code>文件，得到一个二维码</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/from_the-x.png"
+                      alt="[from_the-x.png]"
+                ></p>
+<p>扫描获得<code>KEY&#123;dca57f966e4e4e31fd5b15417da63269&#125;</code></p>
+<h4 id="Misc-另外一个世界"><a href="#Misc-另外一个世界" class="headerlink" title="Misc-另外一个世界"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C" >Misc-另外一个世界 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>解压后又是一个图片，用<code>Stegsolve</code>和<code>binwalk</code>都没看出什么异常</p>
+<p>尝试用十六进制编辑器打开，在最底部发现一段不太寻常的01串</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">01101011 01101111 01100101 01101011 01101010 00110011 01110011</span><br></pre></td></tr></table></figure></div>
+
+<p>每8位转化为10进制($2^8-1&#x3D;255$)并对应到ASCII码获得字符串</p>
+<table>
+<thead>
+<tr>
+<th>二进制</th>
+<th>十进制</th>
+<th>ASCII</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01101011</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>01101111</td>
+<td>111</td>
+<td>o</td>
+</tr>
+<tr>
+<td>01100101</td>
+<td>101</td>
+<td>e</td>
+</tr>
+<tr>
+<td>01101011</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>01101010</td>
+<td>106</td>
+<td>j</td>
+</tr>
+<tr>
+<td>00110011</td>
+<td>51</td>
+<td>3</td>
+</tr>
+<tr>
+<td>01110011</td>
+<td>115</td>
+<td>s</td>
+</tr>
+</tbody></table>
+<p>获得<code>flag&#123;koekj3s&#125;</code></p>
+<h4 id="Misc-wireshark"><a href="#Misc-wireshark" class="headerlink" title="Misc-wireshark"></a><a class="link"   href="https://buuoj.cn/challenges#wireshark" >Misc-wireshark <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>使用<code>wireshark</code>打开流量包</p>
+<p>Ctrl + F打开过滤器，据题目提示，查找<code>POST</code>请求</p>
+<p>运气很好，第一个<code>POST</code>请求就能获得<code>flag&#123;ffb7567a1d4f4abdffdb54e022f8facd&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-wireshark.png"
+                      alt="[Misc-wireshark.png]"
+                ></p>
+<h4 id="Misc-数据包中的线索"><a href="#Misc-数据包中的线索" class="headerlink" title="Misc-数据包中的线索"></a><a class="link"   href="https://buuoj.cn/challenges#%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2" >Misc-数据包中的线索 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>直接查询<code>HTTP</code></p>
+<p>找到这条</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2.png"
+                      alt="[Misc-数据包中的线索.png]"
+                ></p>
+<p><code>右键 &gt;&gt; Follow &gt;&gt; HTTP Stream</code>，将内容复制下来通过<code>base64</code>解码得到一张图片</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/from_the-x.jpg"
+                      alt="[from_the-x.jpg]"
+                ></p>
+<p>获得<code>flag&#123;209acebf6324a09671abc31c869de72c&#125;</code></p>
+<h4 id="Misc-文件中的秘密"><a href="#Misc-文件中的秘密" class="headerlink" title="Misc-文件中的秘密"></a><a class="link"   href="https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86" >Misc-文件中的秘密 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>Windows下<br><code>右键 &gt;&gt; 属性(Alt + Ctrl) &gt;&gt; 详细信息 &gt;&gt; 备注</code> 获取 <code>flag&#123;870c5a72806115cb5439345d8b014396&#125;</code></p>
+<p>也可以用十六进制编辑器查找到相应片段</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86.png"
+                      alt="[Misc-文件中的秘密.png]"
+                ></p>
+<h4 id="Misc-FLAG"><a href="#Misc-FLAG" class="headerlink" title="Misc-FLAG"></a><a class="link"   href="https://buuoj.cn/challenges#FLAG" >Misc-FLAG <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>打开<code>Stegsolve</code>，使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0, LSB First</code>并<code>Save Bin</code>保存为zip文件并解压</p>
+<p>执行<code>1</code>文件，可以找到<code>hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</code>字样</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ <span class="built_in">chmod</span> +x 1</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ ./1</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者用<code>strings</code>命令扫描文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/FLAG]</span><br><span class="line">└─$ strings 1 | grep hctf</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者用<code>ghidra</code>反编译二进制文件，找到<code>main</code>函数查看代码，发现</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>都能获取<code>hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</code></p>
+<h4 id="Misc-后门查杀"><a href="#Misc-后门查杀" class="headerlink" title="Misc-后门查杀"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80" >Misc-后门查杀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>将解压后的文件夹扔进D盾扫描</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-1.png"
+                      alt="[Misc-后门查杀-1.png]"
+                ></p>
+<p>点击<code>已知后门</code>，<code>右键 &gt;&gt; 查看文件</code>，找到如下字段，其中变量<code>pass</code>的内容为<code>md5</code>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-2.png"
+                      alt="[Misc-后门查杀-2.png]"
+                ></p>
+<p>依照提示进而获得<code>flag&#123;6ac45fb83b3bc355c024f5034b947dd3&#125;</code></p>
+<h4 id="Misc-来首歌吧"><a href="#Misc-来首歌吧" class="headerlink" title="Misc-来首歌吧"></a><a class="link"   href="https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7" >Misc-来首歌吧 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>使用<code>Audacity</code>打开解压后的音频文件<code>stego100</code></p>
+<p>放大音轨后感觉好像是摩斯电码？先把它抄下来</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">..... -... -.-. ----. ..--- ..... -.... ....- ----. -.-. -... ----- .---- ---.. ---.. ..-. ..... ..--- . -... .---- --... -.. --... ----- ----. ..--- ----. .---- ----. .---- -.-.</span><br></pre></td></tr></table></figure></div>
+
+<p>放到解密器里解密，获得<code>flag&#123;5BC925649CB0188F52E617D70929191C&#125;</code></p>
+<h4 id="Misc-乌镇峰会种图"><a href="#Misc-乌镇峰会种图" class="headerlink" title="Misc-乌镇峰会种图"></a><a class="link"   href="https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE" >Misc-乌镇峰会种图 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>思路同<a class="link"   href="https://buuoj.cn/challenges#%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0" >Misc-你竟然赶我走 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><code>flag&#123;97314e7864a8f62627b26f3f998c37f1&#125;</code></p>
+<h4 id="Misc-基础破解"><a href="#Misc-基础破解" class="headerlink" title="Misc-基础破解"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%9F%BA%E7%A1%80%E7%A0%B4%E8%A7%A3" >Misc-基础破解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>根据题目提示，我们使用<code>rarcrack</code>命令暴力破解下载获得的文件</p>
+<p>首先设置<code>&lt;filename&gt;.xml</code>配置文件</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>再使用命令破解</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/基础破解]</span><br><span class="line">└─$ rarcrack »ù´¡ÆÆ½â.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking »ù´¡ÆÆ½â.rar, status file: »ù´¡ÆÆ½â.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;2563&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>解压获得<code>flag.txt</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ZmxhZ3s3MDM1NDMwMGE1MTAwYmE3ODA2ODgwNTY2MWI5M2E1Y30=</span><br></pre></td></tr></table></figure></div>
+
+<p>尝试提交<code>flag</code>，发现错误</p>
+<p>再次观察这段消息，或许是加密后的结果？</p>
+<p>使用<a class="link"   href="https://the-x.cn/encodings/Base64.aspx" >在线解密网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>解密，获取<code>flag&#123;70354300a5100ba78068805661b93a5c&#125;</code></p>
+<h4 id="Misc-假如给我三天光明"><a href="#Misc-假如给我三天光明" class="headerlink" title="Misc-假如给我三天光明"></a><a class="link"   href="https://buuoj.cn/challenges#%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E" >Misc-假如给我三天光明 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>解压文件，得到一个压缩文件<code>music.zip</code>和一张图片<code>pic.jpg</code></p>
+<p>打开图片，发现下面有一排 $2 \times 3$ 点阵图，猜测是盲文</p>
+<p>查询盲文表并解密，得到<code>kmdonowg</code></p>
+<p>尝试以此为密码解压文件，发现解压不成功</p>
+<p>通过<code>binwalk</code>指令扫描文件，提示这是一个<code>rar</code>文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/假如给我三天光明]</span><br><span class="line">└─$ binwalk music.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             RAR archive data, version 4.x, first volume <span class="built_in">type</span>: MAIN_HEAD</span><br></pre></td></tr></table></figure></div>
+
+<p>将文件名改为<code>music.rar</code>，以<code>kmdonowg</code>为密码尝试再次解压</p>
+<p>得到一个音频文件，使用<code>Audacity</code>打开文件，获得一段摩斯电码</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">-.-. - ..-. .-- .--. . .. ----- ---.. --... ...-- ..--- ..--.. ..--- ...-- -.. --..</span><br></pre></td></tr></table></figure></div>
+
+<p>通过摩斯电码转换器获得</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTFWPEI08732?23DZ</span><br></pre></td></tr></table></figure></div>
+
+<p>进而获得<code>flag&#123;wepi08732?23dz&#125;</code></p>
+<h4 id="Misc-rar"><a href="#Misc-rar" class="headerlink" title="Misc-rar"></a><a class="link"   href="https://buuoj.cn/challenges#rar" >Misc-rar <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h4><p>根据题目提示，我们使用<code>rarcrack</code>命令暴力破解下载获得的文件</p>
+<p>首先设置<code>&lt;filename&gt;.xml</code>配置文件</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>再使用命令破解</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">┌──(hervey㉿ZHW)-[~/Downloads/Misc/rar]</span><br><span class="line">└─$ rarcrack dianli_jbctf_MISC_T10076_20150707_rar.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking dianli_jbctf_MISC_T10076_20150707_rar.rar, status file: dianli_jbctf_MISC_T10076_20150707_rar.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">Probing: <span class="string">&#x27;1488&#x27;</span> [492 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;3120&#x27;</span> [544 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;4724&#x27;</span> [534 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;6313&#x27;</span> [529 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;7947&#x27;</span> [544 pwds/sec]</span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;8795&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>解压获得<code>flag.txt</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">flag&#123;1773c5da790bd3caff38e3decd180eb7&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>WP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go语言获得Cravatar头像服务网址</title>
+    <url>/2023/09/30/Go-use-cravatar/</url>
+    <content><![CDATA[<p><del>Cravatar真是个好东西</del></p>
+<p>这是Cravatar图像请求的Go语言实现，具体的加密方式请查阅<a class="link"   href="https://cravatar.com/developer/api" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;crypto/md5&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;strings&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">// Hash值获取方式 先删除前导和尾随的空格，再将所有字符置为小写，最后进行MD5加密</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hash</span><span class="params">(email <span class="type">string</span>)</span></span> [<span class="number">16</span>]<span class="type">byte</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> md5.Sum([]<span class="type">byte</span>(strings.ToLower(strings.TrimFunc(email, <span class="function"><span class="keyword">func</span><span class="params">(r <span class="type">rune</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> r == <span class="string">&#x27; &#x27;</span></span><br><span class="line">    &#125;))))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 头像获取地址为 https://cravatar.cn/avatar/&#123;HASH&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EmailToCravatarURL</span><span class="params">(email <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> fmt.Sprintf(<span class="string">&quot;https://cravatar.cn/avatar/%x&quot;</span>, Hash(email))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 试试效果！</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Print(EmailToCravatarURL(&#123;Your email here&#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>头像服务</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何使用Navicat连接WSL里的MySQL服务</title>
     <url>/2023/08/02/How-to-use-Navicat-to-connect-to-MySQL-services-in-WSL/</url>
     <content><![CDATA[<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h3><p>真的有人会干这么套娃的事情吗？</p>
@@ -191,57 +585,6 @@
 
 <p>这时再使用Navicat访问，即可连接上WSL的MySQL服务。</p>
 ]]></content>
-      <categories>
-        <category>环境配置</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装Kali WSL</title>
-    <url>/2023/11/30/How-to-install-Kali-WSL/</url>
-    <content><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>Kali WSL（Windows Subsystem for Linux）是在 Windows 环境下运行 Kali Linux 的一种方式，同时，WSL相比于Linux虚拟机能和Windows较好的进行文件系统的互通，非常适合用于学习。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-开启-WSL-功能"><a href="#1-开启-WSL-功能" class="headerlink" title="1. 开启 WSL 功能"></a>1. 开启 WSL 功能</h3><p>确保系统为 Windows 10 专业版，然后按照以下步骤开启 WSL 功能：</p>
-<ul>
-<li><p>打开控制面板</p>
-</li>
-<li><p>进入程序 -&gt; 启用或关闭 Windows 功能</p>
-</li>
-<li><p>勾选”适用于 Linux 的 Windows 子系统”</p>
-</li>
-<li><p>系统更新并重启生效</p>
-</li>
-</ul>
-<h3 id="2-安装-Kali-WSL"><a href="#2-安装-Kali-WSL" class="headerlink" title="2. 安装 Kali WSL"></a>2. 安装 Kali WSL</h3><p>在 Windows 应用商店中搜索并下载适用于 Linux 的 Windows 子系统，选择 Kali 作为 Linux 发行版进行安装。</p>
-<h3 id="3-升级到-WSL2"><a href="#3-升级到-WSL2" class="headerlink" title="3. 升级到 WSL2"></a>3. 升级到 WSL2</h3><p>由于版本问题，确保升级到 WSL2，执行以下命令：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart wsl --set-version kali-linux 2</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="4-安装完整版-Kali"><a href="#4-安装完整版-Kali" class="headerlink" title="4. 安装完整版 Kali"></a>4. 安装完整版 Kali</h3><p>安装完成后，打开 Kali Linux ，根据设置用户名及密码。</p>
-<p>重新启动 Kali Linux ，这时我们发现我们的 Kali Linux 还有很多工具没用安装。</p>
-<p>执行以下命令安装 Kali 的完整版：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y kali-linux-large</span><br></pre></td></tr></table></figure></div>
-<h3 id="6-配置图形化桌面并连接（可选）"><a href="#6-配置图形化桌面并连接（可选）" class="headerlink" title="6. 配置图形化桌面并连接（可选）"></a>6. 配置图形化桌面并连接（可选）</h3><p>如果想要体验图形化界面，可以选择安装 Win-KeX</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install -y kali-win-kex</span><br></pre></td></tr></table></figure></div>
-
-<p>打开 Window Mode (窗口模式)</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --win</span><br></pre></td></tr></table></figure></div>
-
-<p>如果你想要体验 Seamless Mode (无缝模式)，还需要额外安装 <a class="link"   href="https://x410.dev/" >X410 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>安装完成后打开并勾选<code>ACCESS CONTROL</code>下的<code>WSL2</code>选项。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/How-to-install-Kali-WSL/X410-Settings.png"
-                     
-                ></p>
-<p>打开 Seamless Mode (窗口模式)</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">kex --sl</span><br></pre></td></tr></table></figure></div>
-
-<p>详细教程:<a class="link"   href="https://x410.dev/cookbook/wsl/protecting-x410-public-access-for-wsl2-via-windows-defender-firewall/" >Protecting X410 Public Access for WSL2 via Windows Defender Firewall - X410.dev <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="7-额外配置（可选）"><a href="#7-额外配置（可选）" class="headerlink" title="7. 额外配置（可选）"></a>7. 额外配置（可选）</h3><p>根据需求，可以配置 Windows Terminal，将 Kali 和 Win-KeX 整合进 Terminal。</p>
-<p>以下是我的配置文件(仅留下 Kali WSL 相关配置)</p>
-<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">		<span class="attr">&quot;list&quot;</span><span class="punctuation">:</span></span><br><span class="line">		<span class="punctuation">[</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;46ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Kali Linux&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Windows.Terminal.Wsl&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Window Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">&#123;</span></span><br><span class="line">				<span class="comment">// &quot;guid&quot;: &quot;&#123;55ca431a-3a87-5fb3-83cd-11ececc031d2&#125;&quot;,</span></span><br><span class="line">				<span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;file:///c:/users/&lt;windows user&gt;/pictures/icons/kali-menu.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win-KeX Seamless Mode&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;wsl -d kali-linux kex --sl --wtstart -s&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;//wsl$/kali-linux/home/&lt;kali user&gt;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">]</span></span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
         <category>环境配置</category>
       </categories>
