@@ -164,7 +164,6 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -213,7 +212,6 @@
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -263,7 +261,6 @@
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -312,7 +309,6 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -360,7 +356,6 @@
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -408,7 +403,6 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -457,7 +451,6 @@
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -507,7 +500,6 @@
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -556,7 +548,6 @@
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -604,7 +595,6 @@
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -1225,7 +1215,6 @@ button {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -1274,7 +1263,6 @@ button {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -1324,7 +1312,6 @@ button {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -1373,7 +1360,6 @@ button {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -1421,7 +1407,6 @@ button {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -1450,8 +1435,8 @@ button {
   --highlight-attr: #22863a;
   --highlight-section: $highlight-section;
   --highlight-bullet: #6f42c1;
-  --highlight-addition: #144212;
-  --highlight-deletion: #600;
+  --highlight-addition: #abe338;
+  --highlight-deletion: #ffa07a;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -1473,8 +1458,8 @@ button {
     --highlight-attr: #22863a;
     --highlight-section: $highlight-section;
     --highlight-bullet: #6f42c1;
-    --highlight-addition: #144212;
-    --highlight-deletion: #600;
+    --highlight-addition: #abe338;
+    --highlight-deletion: #ffa07a;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -1520,8 +1505,8 @@ button {
   --highlight-attr: #22863a;
   --highlight-section: $highlight-section;
   --highlight-bullet: #6f42c1;
-  --highlight-addition: #144212;
-  --highlight-deletion: #600;
+  --highlight-addition: #abe338;
+  --highlight-deletion: #ffa07a;
 }
 .dark-mode {
   --code-foreground: #bfbfc7;
@@ -1901,7 +1886,6 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -1950,7 +1934,6 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2000,7 +1983,6 @@ pre .deletion {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -2049,7 +2031,6 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2097,7 +2078,6 @@ pre .deletion {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -2126,8 +2106,8 @@ pre .deletion {
   --highlight-attr: #22863a;
   --highlight-section: $highlight-section;
   --highlight-bullet: #6f42c1;
-  --highlight-addition: #144212;
-  --highlight-deletion: #600;
+  --highlight-addition: #abe338;
+  --highlight-deletion: #ffa07a;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -2149,8 +2129,8 @@ pre .deletion {
     --highlight-attr: #22863a;
     --highlight-section: $highlight-section;
     --highlight-bullet: #6f42c1;
-    --highlight-addition: #144212;
-    --highlight-deletion: #600;
+    --highlight-addition: #abe338;
+    --highlight-deletion: #ffa07a;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -2196,8 +2176,8 @@ pre .deletion {
   --highlight-attr: #22863a;
   --highlight-section: $highlight-section;
   --highlight-bullet: #6f42c1;
-  --highlight-addition: #144212;
-  --highlight-deletion: #600;
+  --highlight-addition: #abe338;
+  --highlight-deletion: #ffa07a;
 }
 .dark-mode {
   --code-foreground: #bfbfc7;
@@ -2259,7 +2239,6 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2308,7 +2287,6 @@ pre .deletion {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2358,7 +2336,6 @@ pre .deletion {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -2407,7 +2384,6 @@ pre .deletion {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2455,7 +2431,6 @@ pre .deletion {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -2692,7 +2667,6 @@ html.is-animating .transition-fade {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2741,7 +2715,6 @@ html.is-animating .transition-fade {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2791,7 +2764,6 @@ html.is-animating .transition-fade {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -2840,7 +2812,6 @@ html.is-animating .transition-fade {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -2888,7 +2859,6 @@ html.is-animating .transition-fade {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -3144,32 +3114,6 @@ html.is-animating .transition-fade {
   opacity: 1;
   transition: all 0.1s linear;
 }
-.comments-container {
-  display: inline-block;
-  margin-top: 38px;
-  width: 100%;
-}
-.comments-container #comment-anchor {
-  width: 100%;
-  height: 10px;
-}
-.comments-container .comment-area-title {
-  width: 100%;
-  margin: 10px 0;
-  font-size: 1.38rem;
-  color: var(--default-text-color);
-  font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
-  font-weight: bold;
-}
-.comments-container .comment-area-title i {
-  color: var(--default-text-color);
-}
-@media (max-width: 768px) {
-  .comments-container .comment-area-title {
-    margin: 5px 0;
-    font-size: 1.2rem;
-  }
-}
 .progress-bar-container {
   position: fixed;
   top: 0;
@@ -3177,33 +3121,9 @@ html.is-animating .transition-fade {
   width: 100%;
   z-index: 1009;
 }
-.progress-bar-container .swup-progress-icon {
-  position: absolute;
-  top: 5px;
-  right: 8px;
-  z-index: 1008;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 6px 0 0;
-  font-size: 1.1rem;
-  color: var(--default-text-color);
-  opacity: 0;
-  transition: opacity 0.1s ease-out;
-}
-@media (max-width: 768px) {
-  .progress-bar-container .swup-progress-icon {
-    padding: 6px 5px 0 0;
-    font-size: 1rem;
-  }
-}
 html.is-animating .scroll-progress-bar {
   opacity: 0;
   transition: opacity 0.1s ease-out;
-}
-html.is-animating .swup-progress-icon {
-  opacity: 1;
-  transition: opacity 0.1s ease;
 }
 .swup-progress-bar {
   background: #12c2e9;
@@ -3248,7 +3168,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -3297,7 +3216,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -3347,7 +3265,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -3396,7 +3313,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -3444,7 +3360,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -3474,7 +3389,7 @@ html.is-animating .swup-progress-icon {
 .navbar-container .navbar-content {
   position: relative;
   height: 100%;
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   display: flex;
   flex-direction: row;
@@ -3485,16 +3400,6 @@ html.is-animating .swup-progress-icon {
 }
 .navbar-container .navbar-content.has-home-banner {
   max-width: 1200px;
-}
-@media (max-width: 768px) {
-  .navbar-container .navbar-content {
-    width: 86%;
-  }
-}
-@media (max-width: 640px) {
-  .navbar-container .navbar-content {
-    width: 90%;
-  }
 }
 .navbar-container .navbar-content .left {
   display: flex;
@@ -3561,6 +3466,27 @@ html.is-animating .swup-progress-icon {
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
+.navbar-container .navbar-content .right .desktop .navbar-list .navbar-item a::after,
+.navbar-container .navbar-content .right .desktop .navbar-list .navbar-item .active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  transform: translate3d(-50%, -5px, 0);
+  border-radius: 18px;
+  background: var(--primary-color);
+  opacity: 0;
+  transition-property: color, background, box-shadow, border-color, transform, bottom, opacity;
+  transition-delay: 0s, 0s, 0s, 0s, 0.2s, 0.2s, 0.2s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, ease;
+}
+.navbar-shrink .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item a::after,
+.navbar-shrink .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item .active::after {
+  bottom: -8.2px;
+}
 .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item:hover a .fa-chevron-down {
   transform: rotate(180deg);
 }
@@ -3569,19 +3495,12 @@ html.is-animating .swup-progress-icon {
 }
 .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item:hover a::after,
 .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item .active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 100%;
-  height: 2px;
-  transform: translateX(-50%);
-  border-radius: 18px;
-  background: var(--primary-color);
-  transition-property: color, background, box-shadow, border-color, transform, bottom;
-  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
-  transition-timing-function: ease, ease, ease, ease, linear, linear;
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+  transition-property: color, background, box-shadow, border-color, transform, bottom, opacity;
+  transition-delay: 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  transition-timing-function: ease, ease, ease, ease, ease, ease, ease;
 }
 .navbar-shrink .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item:hover a::after,
 .navbar-shrink .navbar-container .navbar-content .right .desktop .navbar-list .navbar-item .active::after {
@@ -3733,20 +3652,18 @@ html.is-animating .swup-progress-icon {
 }
 .navbar-container .navbar-drawer {
   padding: 70px 0 20px 0;
-  transform: scaleY(0);
+  transform: translateX(100%);
   transform-origin: top;
   z-index: 1002;
-  opacity: 0;
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
-  transition-property: color, background, box-shadow, border-color, transform, opacity;
-  transition-delay: 0s, 0s, 0s, 0s, 0s, 0.1s;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.38s, 0.38s;
-  transition-timing-function: ease, ease, ease, ease, ease, ease;
+  transition-property: color, background, box-shadow, border-color, transform;
+  transition-delay: 0s, 0s, 0s, 0s, 0s;
+  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.38s;
+  transition-timing-function: ease, ease, ease, ease, ease;
 }
 .navbar-drawer-show .navbar-container .navbar-drawer {
-  transform: scaleY(1);
-  opacity: 1;
+  transform: translateX(0);
 }
 .navbar-container .window-mask {
   position: absolute;
@@ -3768,6 +3685,16 @@ html.is-animating .swup-progress-icon {
 }
 .navbar-drawer-show {
   overflow: hidden;
+}
+[data-target] {
+  display: block; /* or flex, depending on your layout */
+  overflow: hidden;
+}
+[data-target] .submenu-item {
+  opacity: 0;
+}
+.icon-rotated {
+  transform: rotate(90deg);
 }
 .post-tools-container .article-tools-list li {
   cursor: pointer;
@@ -3926,7 +3853,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -3975,7 +3901,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4025,7 +3950,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -4074,7 +3998,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4122,7 +4045,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -4132,78 +4054,17 @@ html.is-animating .swup-progress-icon {
   --redefine-box-shadow-flat-hover: var(--shadow-color-2) 0px 1px 4px 0px, var(--shadow-color-1) 0px 0px 0px 1px, var(--shadow-color-1) 0px 0px 0px 1px inset;
   --mermaid-theme: '';
 }
-.archive-list-container .archive-item {
-  margin-bottom: 38px;
-}
-.archive-list-container .archive-item:last-child {
-  margin-bottom: 0;
-}
-.archive-list-container .archive-item .archive-item-header {
-  margin-bottom: 10px;
-}
-.archive-list-container .archive-item .archive-item-header .archive-year {
-  font-size: 1.8rem;
-  color: var(--second-text-color);
-  font-weight: 600;
-  margin-right: 6px;
-}
-@media (max-width: 768px) {
-  .archive-list-container .archive-item .archive-item-header .archive-year {
-    font-size: 1.6rem;
-  }
-}
-.archive-list-container .archive-item .archive-item-header .archive-year-post-count {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--second-text-color);
-}
-@media (max-width: 768px) {
-  .archive-list-container .archive-item .archive-item-header .archive-year-post-count {
-    font-size: 1.08rem;
-  }
-}
-.archive-list-container .archive-item .article-list {
-  padding-left: 30px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-@media (max-width: 768px) {
-  .archive-list-container .archive-item .article-list {
-    padding-left: 0;
-  }
-}
-.archive-list-container .archive-item .article-list .article-item {
-  font-size: 1rem;
-  padding: 3em 2em 1em;
-  position: relative;
-  color: rgba(0,0,0,0.7);
-  border-left: 2px solid var(--border-color);
-}
-.archive-list-container .archive-item .article-list .article-item a {
-  overflow: hidden;
-  display: block;
-}
-.archive-list-container .archive-item .article-list .article-item a .article-title {
-  font-size: 1.6rem;
-  margin-bottom: 0.5em;
-  color: var(--default-text-color);
-}
-.archive-list-container .archive-item .article-list .article-item a:hover .article-title,
-.archive-list-container .archive-item .article-list .article-item a:hover .article-date {
-  color: var(--primary-color);
-}
-.archive-list-container .archive-item .article-list .article-item::before {
+.archive-list-container .article-item::before {
   content: attr(date-is);
   position: absolute;
   left: 2em;
   font-weight: bold;
   top: 1em;
   display: block;
-  font-weight: 700;
   font-size: 0.785rem;
   color: var(--third-text-color);
 }
-.archive-list-container .archive-item .article-list .article-item::after {
+.archive-list-container .article-item::after {
   width: 10px;
   height: 10px;
   display: block;
@@ -4216,7 +4077,7 @@ html.is-animating .swup-progress-icon {
   background: var(--background-color);
   transition: background 0.2s ease-in-out;
 }
-.archive-list-container .archive-item .article-list .article-item:last-child {
+.archive-list-container .article-item:last-child {
   border-image: var(--archive-timeline-last-child-color);
 }
 :root {
@@ -4257,7 +4118,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4306,7 +4166,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4356,7 +4215,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -4405,7 +4263,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4453,7 +4310,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -4658,7 +4514,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4707,7 +4562,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4757,7 +4611,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -4806,7 +4659,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -4854,7 +4706,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -5004,6 +4855,16 @@ html.is-animating .swup-progress-icon {
   border-radius: 9px;
   transition: opacity 0.2s ease-out;
 }
+.page-template-container figure.image-caption img {
+  margin-bottom: 0;
+}
+.page-template-container figure.image-caption figcaption {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--third-text-color);
+}
 .page-template-container .image-container:hover .image-title,
 .page-template-container .image-container:hover .image-description {
   opacity: 1;
@@ -5087,7 +4948,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5136,7 +4996,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5186,7 +5045,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -5235,7 +5093,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5283,7 +5140,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -5294,16 +5150,7 @@ html.is-animating .swup-progress-icon {
   --mermaid-theme: '';
 }
 .home-banner-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--home-banner-img) center center/cover no-repeat;
-  background-size: cover;
-  will-change: transform;
-  box-sizing: border-box;
-  transform: scale(1.1);
+  transition: filter 0.3s ease;
 }
 .home-banner-container {
   font-family: 'Chillax-Variable', sans-serif;
@@ -5312,8 +5159,6 @@ html.is-animating .swup-progress-icon {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: var(--home-banner-img) center center/cover no-repeat;
-  background-size: cover;
   will-change: transform;
 }
 .home-banner-container .content {
@@ -5322,11 +5167,8 @@ html.is-animating .swup-progress-icon {
   min-height: 90vh;
 }
 .home-banner-container .content .description {
-  width: 100vw;
-  font-weight: 450;
   font-size: 2.8rem;
   line-height: 1.2;
-  text-align: center;
   color: var(--home-banner-text-color);
 }
 .home-banner-container .content .description p {
@@ -5346,64 +5188,6 @@ html.is-animating .swup-progress-icon {
   .home-banner-container .content .description {
     font-size: 2.52rem;
   }
-}
-.home-banner-container .content .social-contacts {
-  position: absolute;
-  bottom: 60px;
-  font-size: 1.6rem;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-  padding: 4px 24px;
-  border-radius: 14px;
-  box-shadow: inset 0 0 2000px var(--home-banner-icons-container-background-color);
-  border: 1.5px solid var(--home-banner-icons-container-border-color);
-}
-@media (max-width: 768px) {
-  .home-banner-container .content .social-contacts {
-    font-size: 1.44rem;
-  }
-}
-.home-banner-container .content .social-contacts .social-contact-item {
-  margin-right: 20px;
-  cursor: pointer;
-  line-height: 2;
-  color: #fff;
-}
-.home-banner-container .content .social-contacts .social-contact-item:last-child {
-  margin-right: 0;
-}
-.home-banner-container .content .social-contacts .social-contact-item-qr {
-  margin-right: 20px;
-  cursor: pointer;
-  line-height: 2;
-  color: #fff;
-}
-.home-banner-container .content .social-contacts .social-contact-item-qr:last-child {
-  margin-right: 0;
-}
-.home-banner-container .content .social-contacts .social-qr-container {
-  width: max-content;
-  display: none;
-  position: absolute;
-  bottom: 120%;
-  right: 0px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-  border-radius: 14px;
-  box-shadow: inset 0 0 2000px var(--home-banner-icons-container-background-color);
-  border: 1.5px solid var(--home-banner-icons-container-border-color);
-  overflow: hidden;
-}
-.home-banner-container .content .social-contacts .social-qr-container .social-contacts-qr {
-  display: flex;
-  width: 150px;
-  padding: 15px;
-}
-.home-banner-container .content .social-contacts .social-contact-item-qr:hover .social-qr-container {
-  display: initial;
 }
 .image-viewer-container {
   position: fixed;
@@ -5480,6 +5264,15 @@ html.is-animating .swup-progress-icon {
   .category-list-container {
     padding: 22px;
     border-radius: 18px;
+  }
+}
+@media (max-width: 640px) {
+  .category-list-container {
+    padding: 1.2rem 0.2rem;
+    box-shadow: none;
+  }
+  .category-list-container:hover {
+    box-shadow: none;
   }
 }
 .category-list-container .category-header {
@@ -5641,7 +5434,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5690,7 +5482,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5740,7 +5531,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -5789,7 +5579,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -5837,7 +5626,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -5976,7 +5764,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6025,7 +5812,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6075,7 +5861,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -6124,7 +5909,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6172,7 +5956,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -6360,7 +6143,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6409,7 +6191,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6459,7 +6240,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -6508,7 +6288,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6556,7 +6335,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -6628,27 +6406,6 @@ html.is-animating .swup-progress-icon {
 }
 .home-sidebar-container .sidebar-content .author .label {
   text-align: center;
-  font-size: 0.8rem;
-  color: var(--third-text-color);
-}
-.home-sidebar-container .sidebar-content .statistics {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-}
-.home-sidebar-container .sidebar-content .statistics .item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-}
-.home-sidebar-container .sidebar-content .statistics .item .number {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--second-text-color);
-}
-.home-sidebar-container .sidebar-content .statistics .item .label {
   font-size: 0.8rem;
   color: var(--third-text-color);
 }
@@ -6807,7 +6564,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6856,7 +6612,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -6906,7 +6661,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -6955,7 +6709,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7003,7 +6756,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -7014,12 +6766,6 @@ html.is-animating .swup-progress-icon {
   --mermaid-theme: '';
 }
 .post-page-container {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
   gap: 0px;
 }
 @media (max-width: 640px) {
@@ -7139,81 +6885,57 @@ html.is-animating .swup-progress-icon {
 .post-page-container .article-content-container .article-content>:first-child {
   margin-top: 0 !important;
 }
-.post-page-container .article-content-container .post-tags-box {
-  display: none;
-  margin-top: 1.6rem;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-@media (max-width: 768px) {
-  .post-page-container .article-content-container .post-tags-box {
-    display: flex;
-  }
-}
-@media (max-width: 640px) {
-  .post-page-container .article-content-container .post-tags-box {
-    margin-top: 1.2rem;
-    font-size: 1rem;
-    flex-wrap: wrap;
-  }
-}
-.post-page-container .article-content-container .post-tags-box .tag-item {
-  margin: 0 0.25rem;
-}
-.post-page-container .article-content-container .post-copyright-info {
-  width: 100%;
-}
-.post-page-container .article-content-container .article-nav .article-prev a,
-.post-page-container .article-content-container .article-nav .article-next a {
+.post-page-container .article-content-container .article-prev a,
+.post-page-container .article-content-container .article-next a {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-.post-page-container .article-content-container .article-nav .article-prev a.prev,
-.post-page-container .article-content-container .article-nav .article-next a.prev {
+.post-page-container .article-content-container .article-prev a.prev,
+.post-page-container .article-content-container .article-next a.prev {
   padding-left: 16px;
 }
-.post-page-container .article-content-container .article-nav .article-prev a.next,
-.post-page-container .article-content-container .article-nav .article-next a.next {
+.post-page-container .article-content-container .article-prev a.next,
+.post-page-container .article-content-container .article-next a.next {
   padding-right: 16px;
 }
-.post-page-container .article-content-container .article-nav .article-prev a .arrow-icon,
-.post-page-container .article-content-container .article-nav .article-next a .arrow-icon {
+.post-page-container .article-content-container .article-prev a .arrow-icon,
+.post-page-container .article-content-container .article-next a .arrow-icon {
   position: absolute;
   top: 0;
   height: 100%;
   width: 16px;
 }
-.post-page-container .article-content-container .article-nav .article-prev a .arrow-icon.left,
-.post-page-container .article-content-container .article-nav .article-next a .arrow-icon.left {
+.post-page-container .article-content-container .article-prev a .arrow-icon.left,
+.post-page-container .article-content-container .article-next a .arrow-icon.left {
   left: 0;
 }
-.post-page-container .article-content-container .article-nav .article-prev a .arrow-icon.right,
-.post-page-container .article-content-container .article-nav .article-next a .arrow-icon.right {
+.post-page-container .article-content-container .article-prev a .arrow-icon.right,
+.post-page-container .article-content-container .article-next a .arrow-icon.right {
   right: 0;
 }
-.post-page-container .article-content-container .article-nav .article-prev a .title,
-.post-page-container .article-content-container .article-nav .article-next a .title {
+.post-page-container .article-content-container .article-prev a .title,
+.post-page-container .article-content-container .article-next a .title {
   width: 100%;
   height: 100%;
 }
-.post-page-container .article-content-container .article-nav .post-nav-item {
+.post-page-container .article-content-container .post-nav-item {
   display: none;
 }
 @media (max-width: 768px) {
-  .post-page-container .article-content-container .article-nav .post-nav-item {
+  .post-page-container .article-content-container .post-nav-item {
     display: inline-block;
   }
 }
-.post-page-container .article-content-container .article-nav .post-nav-title-item {
+.post-page-container .article-content-container .post-nav-title-item {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 @media (max-width: 768px) {
-  .post-page-container .article-content-container .article-nav .post-nav-title-item {
+  .post-page-container .article-content-container .post-nav-title-item {
     display: none;
   }
 }
@@ -7235,11 +6957,6 @@ html.is-animating .swup-progress-icon {
   .post-page-container .article-content-container .recommended-article .recommended-desktop {
     display: none;
   }
-}
-.post-page-container .article-content-container .recommended-article .recommended-article-header {
-  font-size: 28px;
-  font-weight: 550;
-  margin-top: 2.8rem;
 }
 .post-page-container .article-content-container .recommended-article .recommended-article-group {
   padding: 10px 0;
@@ -7392,7 +7109,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7441,7 +7157,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7491,7 +7206,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -7540,7 +7254,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7588,7 +7301,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -7690,7 +7402,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7739,7 +7450,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7789,7 +7499,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -7838,7 +7547,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -7886,7 +7594,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -7970,6 +7677,15 @@ html.is-animating .swup-progress-icon {
   .tagcloud-container {
     padding: 22px;
     border-radius: 18px;
+  }
+}
+@media (max-width: 640px) {
+  .tagcloud-container {
+    padding: 1.2rem 0.2rem;
+    box-shadow: none;
+  }
+  .tagcloud-container:hover {
+    box-shadow: none;
   }
 }
 .tagcloud-container .tagcloud-header {
@@ -8131,7 +7847,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -8180,7 +7895,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #fdf3e9;
     --note-black-title-bg: #e9e9e9;
     --note-purple-title-bg: #f9e9fd;
-    --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
     --home-banner-text-color: #fff;
     --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
     --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -8230,7 +7944,6 @@ html.is-animating .swup-progress-icon {
     --note-type-title-bg: #4e3a1e;
     --note-black-title-bg: #1e1e1e;
     --note-purple-title-bg: #4e1e4e;
-    --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
     --home-banner-text-color: #d1d1b6;
     --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
     --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
@@ -8279,7 +7992,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #fdf3e9;
   --note-black-title-bg: #e9e9e9;
   --note-purple-title-bg: #f9e9fd;
-  --home-banner-img: url("/images/wallhaven-wqery6-light.webp");
   --home-banner-text-color: #fff;
   --home-banner-icons-container-border-color: rgba(255,255,255,0.35);
   --home-banner-icons-container-background-color: rgba(255,255,255,0.3);
@@ -8327,7 +8039,6 @@ html.is-animating .swup-progress-icon {
   --note-type-title-bg: #4e3a1e;
   --note-black-title-bg: #1e1e1e;
   --note-purple-title-bg: #4e1e4e;
-  --home-banner-img: url("/images/wallhaven-wqery6-dark.webp");
   --home-banner-text-color: #d1d1b6;
   --home-banner-icons-container-border-color: rgba(197,197,197,0.35);
   --home-banner-icons-container-background-color: rgba(197,197,197,0.3);
