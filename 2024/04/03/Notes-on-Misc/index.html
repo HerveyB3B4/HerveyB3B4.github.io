@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Hervey">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://herveyb3b4.github.io/2024/04/03/notes-on-misc/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="1 工具使用1.1  stegsolve 打开Stegsolve图片隐写解析器 1java -jar Stegsolve.jar  2 练习记录Misc-金三胖 在File &gt;&gt; Open中打开gif文件 使用Analyse &gt;&gt; Frame逐帧查看 在第21,51,79帧寻找到flag片段，将其组合在一起获得flag&amp;#123;he11ohongke&amp;#125; Misc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[长期更新]杂项做题笔记">
+<meta property="og:url" content="http://herveyb3b4.github.io/2024/04/03/Notes-on-Misc/index.html">
+<meta property="og:site_name" content="Hervey&#39;s Blog">
+<meta property="og:description" content="1 工具使用1.1  stegsolve 打开Stegsolve图片隐写解析器 1java -jar Stegsolve.jar  2 练习记录Misc-金三胖 在File &gt;&gt; Open中打开gif文件 使用Analyse &gt;&gt; Frame逐帧查看 在第21,51,79帧寻找到flag片段，将其组合在一起获得flag&amp;#123;he11ohongke&amp;#125; Misc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/flag.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E4%BA%8C%E7%BB%B4%E7%A0%81.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E5%A4%A7%E7%99%BD.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/dabai.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/from_the-x.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-wireshark.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/from_the-x.jpg">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-1.png">
+<meta property="og:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-2.png">
+<meta property="article:published_time" content="2024-04-03T15:59:56.000Z">
+<meta property="article:modified_time" content="2024-04-04T07:25:34.067Z">
+<meta property="article:author" content="Hervey">
+<meta property="article:tag" content="WriteUp">
+<meta property="article:tag" content="Misc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://herveyb3b4.github.io/images/Notes-on-Misc/flag.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://q1.qlogo.cn/g?b=qq&amp;nk=2963203299&amp;s=100" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://q1.qlogo.cn/g?b=qq&amp;nk=2963203299&amp;s=100">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+    <!--- Page Info-->
+    
+    <title>
+        
+            [长期更新]杂项做题笔记 -
+        
+        Hervey&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        Hervey&#39;s Blog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"herveyb3b4.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Hervey's Blog","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/HerveyB3B4","instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Friends":{"path":"/links/","icon":"fa-solid fa-link"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/HerveyB3B4","Blog":"https://herveyb3b4.github.io"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Friends":{"icon":"fa-solid fa-link","path":"/links/"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2020/8/13 12:00:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Hervey&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/HerveyB3B4">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://herveyb3b4.github.io">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-solid fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/HerveyB3B4">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://herveyb3b4.github.io">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">[长期更新]杂项做题笔记</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Hervey</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-03 23:59:56</span>
+        <span class="mobile">2024-04-03 23:59:56</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-04 15:25:34</span>
+            <span class="mobile">2024-04-04 15:25:34</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/CTF/">CTF</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/WriteUp/">WriteUp</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Misc/">Misc</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="1-工具使用"><a href="#1-工具使用" class="headerlink" title="1 工具使用"></a>1 工具使用</h2><h3 id="1-1-stegsolve"><a href="#1-1-stegsolve" class="headerlink" title="1.1  stegsolve"></a>1.1  <a class="link"   target="_blank" rel="noopener" href="http://www.caesum.com/handbook/Stegsolve.jar" >stegsolve <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>打开<code>Stegsolve</code>图片隐写解析器</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar Stegsolve.jar</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="2-练习记录"><a href="#2-练习记录" class="headerlink" title="2 练习记录"></a>2 练习记录</h2><h3 id="Misc-金三胖"><a href="#Misc-金三胖" class="headerlink" title="Misc-金三胖"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E9%87%91%E4%B8%89%E8%83%96" >Misc-金三胖 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>在<code>File &gt;&gt; Open</code>中打开<code>gif</code>文件</p>
+<p>使用<code>Analyse &gt;&gt; Frame</code>逐帧查看</p>
+<p>在第<code>21,51,79</code>帧寻找到<code>flag</code>片段，将其组合在一起获得<code>flag&#123;he11ohongke&#125;</code></p>
+<h3 id="Misc-LSB"><a href="#Misc-LSB" class="headerlink" title="Misc-LSB"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#LSB" >Misc-LSB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>在<code>File &gt;&gt; Open</code>中打开<code>png</code>文件</p>
+<p>发现在<code>Red plane 0</code>, <code>Green plane 0</code>, <code>Blue plane 0</code>的模式下图片上方有一段色块异常</p>
+<p>使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0, LSB First</code>并<code>Save Bin</code>保存为图片</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/flag.png"
+                      alt="[flag.png]"
+                ></p>
+<p>打开该图片得到一个二维码, 使用<code>QR Research</code>扫描获得: <code>flag&#123;1sb_i4_s0_Ea4y&#125;</code></p>
+<h3 id="Misc-镜子里面的世界"><a href="#Misc-镜子里面的世界" class="headerlink" title="Misc-镜子里面的世界"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E9%95%9C%E5%AD%90%E9%87%8C%E9%9D%A2%E7%9A%84%E4%B8%96%E7%95%8C" >Misc-镜子里面的世界 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>在<code>File &gt;&gt; Open</code>中打开<code>png</code>文件</p>
+<p>发现在<code>Red plane 0</code>, <code>Green plane 0</code>, <code>Blue plane 0</code>的模式下图片全黑</p>
+<p>使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0</code>，得到如下文本</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">4865792049207468 696e6b2077652063  Hey I th ink we c</span><br><span class="line">616e207772697465 20736166656c7920  an write  safely </span><br><span class="line">696e207468697320 66696c6520776974  in this  file wit</span><br><span class="line">686f757420616e79 6f6e652073656569  hout any one seei</span><br><span class="line">6e672069742e2041 6e797761792c2074  ng it. A nyway, t</span><br><span class="line">6865207365637265 74206b6579206973  he secre t key is</span><br><span class="line">3a2073743367305f 7361757275735f77  : st3g0_ saurus_w</span><br><span class="line">7233636b73000000 0000000000000000  r3cks... ........</span><br></pre></td></tr></table></figure></div>
+
+<p>获得<code>flag&#123;st3g0_saurus_wr3cks&#125;</code></p>
+<h3 id="Misc-二维码"><a href="#Misc-二维码" class="headerlink" title="Misc-二维码"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%BA%8C%E7%BB%B4%E7%A0%81" >Misc-二维码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>下载文件并解压获得<code>QR_code.png</code></p>
+<p>看起来是个二维码？用<code>QR Research</code>扫描一下看:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E4%BA%8C%E7%BB%B4%E7%A0%81.png"
+                      alt="[Misc-二维码.png]"
+                ></p>
+<p>好吧什么都没有…</p>
+<p>再用<code>stegsolve</code>试试？</p>
+<p>一无所获…</p>
+<p>或许这并不全是<code>png</code>文件?用<code>binwalk</code>命令分析一下</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ binwalk QR_code.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 280 x 280, 1-bit colormap, non-interlaced</span><br><span class="line">471           0x1D7           Zip archive data, encrypted at least v2.0 to extract, compressed size: 29, uncompressed size: 15, name: 4number.txt</span><br><span class="line">650           0x28A           End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+
+<p>发现里面还藏了个zip文件，使用<code>foremost</code>分离隐藏文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码]</span><br><span class="line">└─$ foremost ./QR_code.png </span><br><span class="line"></span><br><span class="line">Processing: ./QR_code.png</span><br><span class="line">�foundat=4number.txtn</span><br><span class="line">Qjxu�J����[����OPF4L�</span><br><span class="line">*|</span><br></pre></td></tr></table></figure></div>
+
+<p>进入<code>output</code>文件夹中</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output]</span><br><span class="line">└─$ <span class="built_in">ls</span></span><br><span class="line"></span><br><span class="line">audit.txt  png  zip</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>zip</code>文件夹里有一个<code>00000000.zip</code>文件，但是需要密码，由<code>4number.txt</code>的提示我们可以猜测密码由四位数字组成，尝试使用<code>fcrackzip</code>暴力破解:</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ fcrackzip -b -c1 -l 1-4 -u 00000000.zip                                                           </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PASSWORD FOUND!!!!: pw == 7639</span><br></pre></td></tr></table></figure></div>
+
+<p>得到密码为<code>7639</code>，解压文件<code>00000000.zip</code></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ unzip 00000000.zip </span><br><span class="line">Archive:  00000000.zip</span><br><span class="line">[00000000.zip] 4number.txt password: </span><br><span class="line">  inflating: 4number.txt             </span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">ls</span>                                                                                                </span><br><span class="line">00000000.zip  4number.txt</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/二维码/output/zip]</span><br><span class="line">└─$ <span class="built_in">cat</span> ./4number.txt                                                                                 </span><br><span class="line">CTF&#123;vjpw_wnoei&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>成功获得<code>flag&#123;vjpw_wnoei&#125;</code></p>
+<h3 id="Misc-大白"><a href="#Misc-大白" class="headerlink" title="Misc-大白"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD" >Misc-大白 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>打开图片，发现无法正常打开(Kali系统下)，用<code>binwalk</code>命令查看图片文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/dabai]</span><br><span class="line">└─$ binwalk ./dabai.png</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             PNG image, 679 x 256, 8-bit/color RGBA, non-interlaced</span><br><span class="line">91            0x5B            Zlib compressed data, compressed</span><br></pre></td></tr></table></figure></div>
+
+<p>发现还有一段数据未使用，可能是PNG文件头中宽高设置不正确</p>
+<blockquote>
+<p>PNG文件结构(<a class="link"   target="_blank" rel="noopener" href="https://docs.fileformat.com/image/png/" >PNG File Format - Raster Image File <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>)<br>00 - 03 : Header <code>89 50 4E 47</code><br>08 - 0B : Length<br>0C - 0F : Chunk Type Code<br>10 - 13 : Width<br>14 - 17 : Height<br>1D - 20 : CRC</p>
+</blockquote>
+<p>使用如下<code>Python</code>脚本获取图片真实大小</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="comment">#文件名</span></span><br><span class="line">filename = <span class="string">&quot;dabai.png&quot;</span></span><br><span class="line"><span class="comment">#图片当前CRC(29-32位)</span></span><br><span class="line">CRC = <span class="number">0x6d7c7135</span></span><br><span class="line"></span><br><span class="line">crcbp = <span class="built_in">open</span>(filename, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        data = crcbp[<span class="number">12</span>:<span class="number">16</span>] + \</span><br><span class="line">            struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, i) + struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, j) + crcbp[<span class="number">24</span>:<span class="number">29</span>]</span><br><span class="line">        crc32 = binascii.crc32(data) &amp; <span class="number">0xffffffff</span></span><br><span class="line">        <span class="keyword">if</span> (crc32 == CRC):</span><br><span class="line">            <span class="built_in">print</span>(i, j)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;hex:&#x27;</span>, <span class="built_in">hex</span>(i), <span class="built_in">hex</span>(j))</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Tools/Misc]</span><br><span class="line">└─$ python calc_pic_size.py </span><br><span class="line">679 479</span><br><span class="line">hex: 0x2a7 0x1df</span><br></pre></td></tr></table></figure></div>
+
+<p>打开十六进制编辑器, 将<code>10 - 17</code>位设置为正确值:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%A4%A7%E7%99%BD.png"
+                      alt="[Misc-大白.png]"
+                ></p>
+<p>再次打开图片，即可获得<code>flag&#123;He1l0_d4_ba1&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/dabai.png"
+                      alt="[dabai.png]"
+                ></p>
+<h3 id="Misc-你竟然赶我走"><a href="#Misc-你竟然赶我走" class="headerlink" title="Misc-你竟然赶我走"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0" >Misc-你竟然赶我走 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>解压后发现一张图片，先用<code>Stegsolve</code>试试，尝试了一圈发现在某些模式下右下角有些变化，推测可能在文件尾有问题</p>
+<p>使用<code>010 Editor</code>打开文件，一直拉到最底下，获得<code>flag&#123;stego_is_s0_bor1ing&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0.png"
+                      alt="[Misc-你竟然赶我走.png]"
+                ></p>
+<h3 id="Misc-zip伪加密"><a href="#Misc-zip伪加密" class="headerlink" title="Misc-zip伪加密"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#zip%E4%BC%AA%E5%8A%A0%E5%AF%86" >Misc-zip伪加密 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>下载文件，先解压</p>
+<p>? 怎么加密了</p>
+<p>先<code>binwalk</code>看看文件结构，看看有没有藏些什么提示</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/zip伪加密]</span><br><span class="line">└─$ binwalk ./ee2f7f26-5173-4e7a-8ea4-e4945e6f04ff.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             Zip archive data, encrypted at least v2.0 to extract, compressed size: 25, uncompressed size: 23, name: flag.txt</span><br><span class="line">153           0x99            End of Zip archive, footer length: 22</span><br></pre></td></tr></table></figure></div>
+
+<p>好吧并没有…</p>
+<p>考虑到标题是zip伪加密，查了查<a class="link"   target="_blank" rel="noopener" href="https://docs.fileformat.com/compression/zip/" >zip的文件结构 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>Local file header signature # 0x04034b50 (read as a little-endian number)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>Version needed to extract (minimum)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>General purpose bit flag</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>Compression method</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>File last modification time</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2</td>
+<td>File last modification date</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>CRC-32</td>
+</tr>
+<tr>
+<td>18</td>
+<td>4</td>
+<td>Compressed size</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4</td>
+<td>Uncompressed size</td>
+</tr>
+<tr>
+<td>26</td>
+<td>2</td>
+<td>File name length (n)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2</td>
+<td>Extra field length (m)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>n</td>
+<td>File Name</td>
+</tr>
+<tr>
+<td>30+n</td>
+<td>m</td>
+<td>Extra Field</td>
+</tr>
+</tbody></table>
+<p>其中<code>General purpose bit flag</code>为<code>00 00</code>时为未设置加密</p>
+<p>故修改 06 和 47 位的<code>09</code>为<code>00</code>即可无密码进行解压获得<code>flag.txt</code></p>
+<p>进而获得<code>flag&#123;Adm1N-B2G-kU-SZIP&#125;</code></p>
+<h3 id="Misc-BJDCTF2020-鸡你太美"><a href="#Misc-BJDCTF2020-鸡你太美" class="headerlink" title="Misc-[BJDCTF2020]鸡你太美"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#[BJDCTF2020]%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E" >Misc-[BJDCTF2020]鸡你太美 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>使用十六进制编辑器打开两个文件，对比发现<code>篮球副本.gif</code>文件头缺少<code>GIF8(47 49 46 38)</code>字样，添加后就能正常打开了，进而获得<code>flag&#123;zhi_yin_you_are_beautiful&#125;</code></p>
+<h3 id="Misc-N种方法解决"><a href="#Misc-N种方法解决" class="headerlink" title="Misc-N种方法解决"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#N%E7%A7%8D%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3" >Misc-N种方法解决 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>下载获得<code>KEY.exe</code>文件，点击无法运行</p>
+<p>使用Visual Studio Code打开，发现如下字样</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data:image/jpg;base64,...</span><br></pre></td></tr></table></figure></div>
+
+<p>猜测是一个图片文件，后面的<code>...</code>为<code>base64</code>加密后的文件内容</p>
+<p>使用<a class="link"   target="_blank" rel="noopener" href="https://the-x.cn/encodings/Base64.aspx" >在线解密网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>解密后保存为<code>png</code>文件，得到一个二维码</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/from_the-x.png"
+                      alt="[from_the-x.png]"
+                ></p>
+<p>扫描获得<code>KEY&#123;dca57f966e4e4e31fd5b15417da63269&#125;</code></p>
+<h3 id="Misc-另外一个世界"><a href="#Misc-另外一个世界" class="headerlink" title="Misc-另外一个世界"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C" >Misc-另外一个世界 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>解压后又是一个图片，用<code>Stegsolve</code>和<code>binwalk</code>都没看出什么异常</p>
+<p>尝试用十六进制编辑器打开，在最底部发现一段不太寻常的01串</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01101011 01101111 01100101 01101011 01101010 00110011 01110011</span><br></pre></td></tr></table></figure></div>
+
+<p>每8位转化为10进制($2^8-1&#x3D;255$)并对应到ASCII码获得字符串</p>
+<table>
+<thead>
+<tr>
+<th>二进制</th>
+<th>十进制</th>
+<th>ASCII</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01101011</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>01101111</td>
+<td>111</td>
+<td>o</td>
+</tr>
+<tr>
+<td>01100101</td>
+<td>101</td>
+<td>e</td>
+</tr>
+<tr>
+<td>01101011</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>01101010</td>
+<td>106</td>
+<td>j</td>
+</tr>
+<tr>
+<td>00110011</td>
+<td>51</td>
+<td>3</td>
+</tr>
+<tr>
+<td>01110011</td>
+<td>115</td>
+<td>s</td>
+</tr>
+</tbody></table>
+<p>获得<code>flag&#123;koekj3s&#125;</code></p>
+<h3 id="Misc-wireshark"><a href="#Misc-wireshark" class="headerlink" title="Misc-wireshark"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#wireshark" >Misc-wireshark <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>使用<code>wireshark</code>打开流量包</p>
+<p>Ctrl + F打开过滤器，据题目提示，查找<code>POST</code>请求</p>
+<p>运气很好，第一个<code>POST</code>请求就能获得<code>flag&#123;ffb7567a1d4f4abdffdb54e022f8facd&#125;</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-wireshark.png"
+                      alt="[Misc-wireshark.png]"
+                ></p>
+<h3 id="Misc-数据包中的线索"><a href="#Misc-数据包中的线索" class="headerlink" title="Misc-数据包中的线索"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2" >Misc-数据包中的线索 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>直接查询<code>HTTP</code></p>
+<p>找到这条</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2.png"
+                      alt="[Misc-数据包中的线索.png]"
+                ></p>
+<p><code>右键 &gt;&gt; Follow &gt;&gt; HTTP Stream</code>，将内容复制下来通过<code>base64</code>解码得到一张图片</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/from_the-x.jpg"
+                      alt="[from_the-x.jpg]"
+                ></p>
+<p>获得<code>flag&#123;209acebf6324a09671abc31c869de72c&#125;</code></p>
+<h3 id="Misc-文件中的秘密"><a href="#Misc-文件中的秘密" class="headerlink" title="Misc-文件中的秘密"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86" >Misc-文件中的秘密 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>Windows下:</p>
+<p><code>右键 &gt;&gt; 属性(Alt + Ctrl) &gt;&gt; 详细信息 &gt;&gt; 备注</code> 获取 <code>flag&#123;870c5a72806115cb5439345d8b014396&#125;</code></p>
+<p>也可以用十六进制编辑器查找到相应片段</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86.png"
+                      alt="[Misc-文件中的秘密.png]"
+                ></p>
+<h3 id="Misc-FLAG"><a href="#Misc-FLAG" class="headerlink" title="Misc-FLAG"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#FLAG" >Misc-FLAG <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>打开<code>Stegsolve</code>，使用<code>Analyse &gt;&gt; Data Extract</code>选中<code>Red 0, Green 0, Blue 0, LSB First</code>并<code>Save Bin</code>保存为zip文件并解压</p>
+<p>执行<code>1</code>文件，可以找到<code>hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</code>字样</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ <span class="built_in">chmod</span> +x 1</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/FLAG]</span><br><span class="line">└─$ ./1</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者用<code>strings</code>命令扫描文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/FLAG]</span><br><span class="line">└─$ strings 1 | grep hctf</span><br><span class="line">hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>或者用<code>ghidra</code>反编译二进制文件，找到<code>main</code>函数查看代码，发现</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>都能获取<code>hctf&#123;dd0gf4c3tok3yb0ard4g41n~~~&#125;</code></p>
+<h3 id="Misc-后门查杀"><a href="#Misc-后门查杀" class="headerlink" title="Misc-后门查杀"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80" >Misc-后门查杀 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>将解压后的文件夹扔进D盾扫描</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-1.png"
+                      alt="[Misc-后门查杀-1.png]"
+                ></p>
+<p>点击<code>已知后门</code>，<code>右键 &gt;&gt; 查看文件</code>，找到如下字段，其中变量<code>pass</code>的内容为<code>md5</code>。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Notes-on-Misc/Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80-2.png"
+                      alt="[Misc-后门查杀-2.png]"
+                ></p>
+<p>依照提示进而获得<code>flag&#123;6ac45fb83b3bc355c024f5034b947dd3&#125;</code></p>
+<h3 id="Misc-来首歌吧"><a href="#Misc-来首歌吧" class="headerlink" title="Misc-来首歌吧"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7" >Misc-来首歌吧 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>使用<code>Audacity</code>打开解压后的音频文件<code>stego100</code></p>
+<p>放大音轨后感觉好像是摩斯电码？先把它抄下来</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..... -... -.-. ----. ..--- ..... -.... ....- ----. -.-. -... ----- .---- ---.. ---.. ..-. ..... ..--- . -... .---- --... -.. --... ----- ----. ..--- ----. .---- ----. .---- -.-.</span><br></pre></td></tr></table></figure></div>
+
+<p>放到解密器里解密，获得<code>flag&#123;5BC925649CB0188F52E617D70929191C&#125;</code></p>
+<h3 id="Misc-乌镇峰会种图"><a href="#Misc-乌镇峰会种图" class="headerlink" title="Misc-乌镇峰会种图"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE" >Misc-乌镇峰会种图 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>思路同<a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0" >Misc-你竟然赶我走 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><code>flag&#123;97314e7864a8f62627b26f3f998c37f1&#125;</code></p>
+<h3 id="Misc-基础破解"><a href="#Misc-基础破解" class="headerlink" title="Misc-基础破解"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%9F%BA%E7%A1%80%E7%A0%B4%E8%A7%A3" >Misc-基础破解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>根据题目提示，我们使用<code>rarcrack</code>命令暴力破解下载获得的文件</p>
+<p>首先设置<code>&lt;filename&gt;.xml</code>配置文件</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>再使用命令破解</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/基础破解]</span><br><span class="line">└─$ rarcrack »ù´¡ÆÆ½â.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking »ù´¡ÆÆ½â.rar, status file: »ù´¡ÆÆ½â.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;2563&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>解压获得<code>flag.txt</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZmxhZ3s3MDM1NDMwMGE1MTAwYmE3ODA2ODgwNTY2MWI5M2E1Y30=</span><br></pre></td></tr></table></figure></div>
+
+<p>尝试提交<code>flag</code>，发现错误</p>
+<p>再次观察这段消息，或许是加密后的结果？</p>
+<p>使用<a class="link"   target="_blank" rel="noopener" href="https://the-x.cn/encodings/Base64.aspx" >在线解密网站 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>解密，获取<code>flag&#123;70354300a5100ba78068805661b93a5c&#125;</code></p>
+<h3 id="Misc-假如给我三天光明"><a href="#Misc-假如给我三天光明" class="headerlink" title="Misc-假如给我三天光明"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E" >Misc-假如给我三天光明 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>解压文件，得到一个压缩文件<code>music.zip</code>和一张图片<code>pic.jpg</code></p>
+<p>打开图片，发现下面有一排 $2 \times 3$ 点阵图，猜测是盲文</p>
+<p>查询盲文表并解密，得到<code>kmdonowg</code></p>
+<p>尝试以此为密码解压文件，发现解压不成功</p>
+<p>通过<code>binwalk</code>指令扫描文件，提示这是一个<code>rar</code>文件</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/假如给我三天光明]</span><br><span class="line">└─$ binwalk music.zip </span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             RAR archive data, version 4.x, first volume <span class="built_in">type</span>: MAIN_HEAD</span><br></pre></td></tr></table></figure></div>
+
+<p>将文件名改为<code>music.rar</code>，以<code>kmdonowg</code>为密码尝试再次解压</p>
+<p>得到一个音频文件，使用<code>Audacity</code>打开文件，获得一段摩斯电码</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-.-. - ..-. .-- .--. . .. ----- ---.. --... ...-- ..--- ..--.. ..--- ...-- -.. --..</span><br></pre></td></tr></table></figure></div>
+
+<p>通过摩斯电码转换器获得</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTFWPEI08732?23DZ</span><br></pre></td></tr></table></figure></div>
+
+<p>进而获得<code>flag&#123;wepi08732?23dz&#125;</code></p>
+<h3 id="Misc-rar"><a href="#Misc-rar" class="headerlink" title="Misc-rar"></a><a class="link"   target="_blank" rel="noopener" href="https://buuoj.cn/challenges#rar" >Misc-rar <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h3><p>根据题目提示，我们使用<code>rarcrack</code>命令暴力破解下载获得的文件</p>
+<p>首先设置<code>&lt;filename&gt;.xml</code>配置文件</p>
+<div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">rarcrack</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">abc</span>&gt;</span>0123456789<span class="tag">&lt;/<span class="name">abc</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">current</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">current</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">good_password</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">rarcrack</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>再使用命令破解</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[~/Downloads/Misc/rar]</span><br><span class="line">└─$ rarcrack dianli_jbctf_MISC_T10076_20150707_rar.rar --threads 20 --<span class="built_in">type</span> rar</span><br><span class="line">RarCrack! 0.2 by David Zoltan Kedves (kedazo@gmail.com)</span><br><span class="line"></span><br><span class="line">INFO: number of threads adjusted to 12</span><br><span class="line">INFO: the specified archive <span class="built_in">type</span>: rar</span><br><span class="line">INFO: cracking dianli_jbctf_MISC_T10076_20150707_rar.rar, status file: dianli_jbctf_MISC_T10076_20150707_rar.rar.xml</span><br><span class="line">INFO: Resuming cracking from password: <span class="string">&#x27;0000&#x27;</span></span><br><span class="line">Probing: <span class="string">&#x27;1488&#x27;</span> [492 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;3120&#x27;</span> [544 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;4724&#x27;</span> [534 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;6313&#x27;</span> [529 pwds/sec]</span><br><span class="line">Probing: <span class="string">&#x27;7947&#x27;</span> [544 pwds/sec]</span><br><span class="line">GOOD: password cracked: <span class="string">&#x27;8795&#x27;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>解压获得<code>flag.txt</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;1773c5da790bd3caff38e3decd180eb7&#125;</span><br></pre></td></tr></table></figure></div>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> [长期更新]杂项做题笔记</li>
+        <li><strong>作者:</strong> Hervey</li>
+        <li><strong>创建于
+                :</strong> 2024-04-03 23:59:56</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2024-04-04 15:25:34
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://herveyb3b4.github.io/2024/04/03/Notes-on-Misc/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/WriteUp/">#WriteUp</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/Misc/">#Misc</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/04/04/Notes-on-Reverse/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">[长期更新]逆向做题笔记</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/03/Basic-Assembly-Language/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">[Reverse] 基础汇编知识</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">[长期更新]杂项做题笔记</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8"><span class="nav-text">1 工具使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-stegsolve"><span class="nav-text">1.1  stegsolve </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0%E8%AE%B0%E5%BD%95"><span class="nav-text">2 练习记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E9%87%91%E4%B8%89%E8%83%96"><span class="nav-text">Misc-金三胖 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-LSB"><span class="nav-text">Misc-LSB </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E9%95%9C%E5%AD%90%E9%87%8C%E9%9D%A2%E7%9A%84%E4%B8%96%E7%95%8C"><span class="nav-text">Misc-镜子里面的世界 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="nav-text">Misc-二维码 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E5%A4%A7%E7%99%BD"><span class="nav-text">Misc-大白 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E4%BD%A0%E7%AB%9F%E7%84%B6%E8%B5%B6%E6%88%91%E8%B5%B0"><span class="nav-text">Misc-你竟然赶我走 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-zip%E4%BC%AA%E5%8A%A0%E5%AF%86"><span class="nav-text">Misc-zip伪加密 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-BJDCTF2020-%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E"><span class="nav-text">Misc-[BJDCTF2020]鸡你太美 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-N%E7%A7%8D%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3"><span class="nav-text">Misc-N种方法解决 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="nav-text">Misc-另外一个世界 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-wireshark"><span class="nav-text">Misc-wireshark </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2"><span class="nav-text">Misc-数据包中的线索 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86"><span class="nav-text">Misc-文件中的秘密 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-FLAG"><span class="nav-text">Misc-FLAG </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E5%90%8E%E9%97%A8%E6%9F%A5%E6%9D%80"><span class="nav-text">Misc-后门查杀 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7"><span class="nav-text">Misc-来首歌吧 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE"><span class="nav-text">Misc-乌镇峰会种图 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E5%9F%BA%E7%A1%80%E7%A0%B4%E8%A7%A3"><span class="nav-text">Misc-基础破解 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E"><span class="nav-text">Misc-假如给我三天光明 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Misc-rar"><span class="nav-text">Misc-rar </span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Hervey</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共 7 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
