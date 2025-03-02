@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Hervey">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://herveyb3b4.github.io/2024/04/07/cybersecurity/ctf/test-0329-writeup/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Record My Coding Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0329 CTF通识课测试1 WriteUp">
+<meta property="og:url" content="http://herveyb3b4.github.io/2024/04/07/CyberSecurity/CTF/Test-0329-WriteUp/index.html">
+<meta property="og:site_name" content="Hervey&#39;s Blog">
+<meta property="og:description" content="Record My Coding Journey.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+<meta property="article:published_time" content="2024-04-07T08:54:32.000Z">
+<meta property="article:modified_time" content="2025-03-02T06:28:03.826Z">
+<meta property="article:author" content="Hervey">
+<meta property="article:tag" content="Misc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://q1.qlogo.cn/g?b=qq&amp;nk=2963203299&amp;s=100" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://q1.qlogo.cn/g?b=qq&amp;nk=2963203299&amp;s=100">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+    <!--- Page Info-->
+    
+    <title>
+        
+            0329 CTF通识课测试1 WriteUp | Hervey&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"herveyb3b4.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"simple","highlight_theme":{"light":"atom-one-light","dark":"atom-one-dark"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100","description":"Record My Coding Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/banner.png","dark":"/images/banner.png"},"title":"Hervey's Blog","subtitle":{"text":["Record My Coding Journey."],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#8a8a8a","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":"https://github.com/HerveyB3B4","instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Friends":{"path":"/links/","icon":"fa-solid fa-link"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/HerveyB3B4","Blog":"https://herveyb3b4.github.io"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Friends":{"icon":"fa-regular fa-link","path":"/links/"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2020/8/13 12:00:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Hervey&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/HerveyB3B4">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://herveyb3b4.github.io">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-solid fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/HerveyB3B4">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://herveyb3b4.github.io">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">42</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">0329 CTF通识课测试1 WriteUp</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Hervey</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-07 16:54:32</span>
+        <span class="mobile">2024-04-07 16:54:32</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-03-02 14:28:03</span>
+            <span class="mobile">2025-03-02 14:28:03</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/CTF/">CTF</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/CTF/WriteUp/">WriteUp</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Misc/">Misc</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="1-tail"><a href="#1-tail" class="headerlink" title="1-tail"></a>1-tail</h2><p>hint其实就在题目里…</p>
+<p>用 010Editor 打开图片，flag 就在文件尾</p>
+<h2 id="2-goose"><a href="#2-goose" class="headerlink" title="2-goose"></a>2-goose</h2><p>考点: Exif 隐写</p>
+<p><code>右键 &gt;&gt; 属性 &gt;&gt; 详细信息</code> 可以看到 flag 在 <code>来源 &gt; 作者</code> 栏</p>
+<h2 id="3-lsb"><a href="#3-lsb" class="headerlink" title="3-lsb"></a>3-lsb</h2><p>考点: lsb 隐写</p>
+<p>使用工具: StegSolve.jar</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar Stegsolve.jar</span><br></pre></td></tr></table></figure></div>
+
+<p>使用StegSolve打开 <code>1_lsb.png</code> 文件， <code>Analyse &gt; Data Extract</code> ，勾选 <code>Red 0</code> , <code>Green 0</code> , <code>Blue 0</code> , <code>LSB First</code> 点击 <code>Preview</code> 获得 flag</p>
+<h2 id="4-polar-light"><a href="#4-polar-light" class="headerlink" title="4-polar-light"></a>4-polar-light</h2><p>考点: png 长宽爆破</p>
+<p>使用 010Editor 获得 png 文件的 CRC 校验码</p>
+<p>使用如下脚本爆破 png 文件的真实长宽</p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line"><span class="comment">#文件名</span></span><br><span class="line">filename = <span class="string">&quot;4.png&quot;</span></span><br><span class="line"><span class="comment">#图片当前CRC(29-32位)</span></span><br><span class="line">CRC = <span class="number">0x2EE0E28E</span></span><br><span class="line"></span><br><span class="line">crcbp = <span class="built_in">open</span>(filename, <span class="string">&quot;rb&quot;</span>).read()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        data = crcbp[<span class="number">12</span>:<span class="number">16</span>] + \</span><br><span class="line">            struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, i)+struct.pack(<span class="string">&#x27;&gt;i&#x27;</span>, j)+crcbp[<span class="number">24</span>:<span class="number">29</span>]</span><br><span class="line">        crc32 = binascii.crc32(data) &amp; <span class="number">0xffffffff</span></span><br><span class="line">        <span class="keyword">if</span> (crc32 == CRC):</span><br><span class="line">            <span class="built_in">print</span>(i, j)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;hex:&#x27;</span>, <span class="built_in">hex</span>(i), <span class="built_in">hex</span>(j))</span><br></pre></td></tr></table></figure></div>
+
+<p>得到png的真实尺寸</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads]</span><br><span class="line">└─$ python3 ./calc_pic_size.py</span><br><span class="line">952 490</span><br><span class="line">hex: 0x3b8 0x1ea</span><br></pre></td></tr></table></figure></div>
+
+<p>替换掉原来的长宽值后打开图片即可获得 flag</p>
+<h2 id="5-spring"><a href="#5-spring" class="headerlink" title="5-spring"></a>5-spring</h2><p>使用 010Editor 打开文件，观察后发现文件倒置了</p>
+<p>使用如下脚本还原 png 文件</p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;5.png&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;real.png&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> g:</span><br><span class="line">        g.write(f.read()[::-<span class="number">1</span>])</span><br></pre></td></tr></table></figure></div>
+
+<p>打开还原后的图片即可获得 flag</p>
+<h2 id="6-bridge"><a href="#6-bridge" class="headerlink" title="6-bridge"></a>6-bridge</h2><p>使用 010 Editor 打开 <code>6.png</code> 发现后面有一段”冗余”内容</p>
+<p>binwalk 一下看看</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads/6]</span><br><span class="line">└─$ binwalk ./6.jpg</span><br><span class="line"></span><br><span class="line">DECIMAL       HEXADECIMAL     DESCRIPTION</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">0             0x0             JPEG image data, JFIF standard 1.02</span><br><span class="line">30            0x1E            TIFF image data, big-endian, offset of first image directory: 8</span><br><span class="line">332           0x14C           JPEG image data, JFIF standard 1.02</span><br><span class="line">9499          0x251B          JPEG image data, JFIF standard 1.02</span><br><span class="line">21682         0x54B2          Copyright string: &quot;Copyright (c) 1998 Hewlett-Packard Company&quot;</span><br><span class="line">809662        0xC5ABE         JPEG image data, JFIF standard 1.02</span><br><span class="line">809692        0xC5ADC         TIFF image data, big-endian, offset of first image directory: 8</span><br><span class="line">809994        0xC5C0A         JPEG image data, JFIF standard 1.02</span><br><span class="line">817885        0xC7ADD         JPEG image data, JFIF standard 1.02</span><br><span class="line">828791        0xCA577         Copyright string: &quot;Copyright (c) 1998 Hewlett-Packard Company&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>可以发现在 jpg 文件后还藏了一个 jpg 文件</p>
+<p>使用 foremost 命令分离文件</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads/6]</span><br><span class="line">└─$ foremost ./6.jpg</span><br><span class="line">Processing: ./6.jpg</span><br><span class="line">|*|</span><br></pre></td></tr></table></figure></div>
+
+<p>从分离出的图片中可获得 flag</p>
+<h2 id="7-nopassword"><a href="#7-nopassword" class="headerlink" title="7-nopassword"></a>7-nopassword</h2><p>考察内容: zip伪加密</p>
+<p>使用工具<del>偷懒工具</del>: 7zip</p>
+<p><del>直接用 7zip 解压即可</del></p>
+<p>修改 5D 位的 <code>09</code> 为 <code>00</code> 即可无密码进行解压得到 <code>flag.txt</code> ，进而获得 flag</p>
+<h2 id="8-birthday"><a href="#8-birthday" class="headerlink" title="8-birthday"></a>8-birthday</h2><p>考察内容: zip密码爆破</p>
+<p>根据题目提示可猜测密码是数字(但是不确定几位)，使用 John 进行爆破</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads]</span><br><span class="line">└─$ zip2john 8.zip &gt; 8.hash</span><br><span class="line"></span><br><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads]</span><br><span class="line">└─$ john 8.hash</span><br><span class="line">Using default input encoding: UTF-8</span><br><span class="line">Loaded 1 password hash (ZIP, WinZip [PBKDF2-SHA1 512/512 AVX512BW 16x])</span><br><span class="line">Cost 1 (HMAC size) is 47 for all loaded hashes</span><br><span class="line">Will run 16 OpenMP threads</span><br><span class="line">Proceeding with single, rules:Single</span><br><span class="line">Press &#x27;q&#x27; or Ctrl-C to abort, almost any other key for status</span><br><span class="line">Almost done: Processing the remaining buffered candidate passwords, if any.</span><br><span class="line">Proceeding with wordlist:/usr/share/john/password.lst</span><br><span class="line">Proceeding with incremental:ASCII</span><br><span class="line">040508           (8.zip/flag.txt)</span><br><span class="line">1g 0:00:00:01 DONE 3/3 (2024-04-07 00:02) 0.8333g/s 314803p/s 314803c/s 314803C/s batow1..mcfars</span><br><span class="line">Use the &quot;--show&quot; option to display all of the cracked passwords reliably</span><br><span class="line">Session completed.</span><br></pre></td></tr></table></figure></div>
+
+<p>得到密码为 <code>040508</code></p>
+<p>解压后打开 <code>flag.txt</code> 即可获得 flag</p>
+<h2 id="9-manyzip"><a href="#9-manyzip" class="headerlink" title="9-manyzip"></a>9-manyzip</h2><p>解压文件后可以发现有很多 zip 文件，每个文件里都有一个 txt 文件，尝试使用如下脚本解压文件</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> *.zip; <span class="keyword">do</span></span><br><span class="line">    unzip <span class="string">&quot;<span class="variable">$file</span>&quot;</span> -d .</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></div>
+
+<p>然后使用 <code>strings</code> 命令寻找 flag</p>
+<div class="code-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">┌──(hervey㉿Hervey)-[/mnt/c/Users/hervey/Downloads/manyzip]</span><br><span class="line">└─$ strings *.txt | grep Stinger</span><br><span class="line">Stinger&#123;dfc2e6b5-9f14-4321-a961-2ef0e756d3b7&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="10-baseXX"><a href="#10-baseXX" class="headerlink" title="10-baseXX"></a>10-baseXX</h2><p>打开 txt 文件，发现这样一段文字</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;fl_kB4Z+11G^q!2Ig;Q/Mpur1bCO=2E!-I@Q-+q2.L&amp;P2`&lt;L&amp;0k&lt;$qI/</span><br></pre></td></tr></table></figure></div>
+
+<p>使用 Base85 解码获得 flag</p>
+<h2 id="11-baseN顾"><a href="#11-baseN顾" class="headerlink" title="11-baseN顾"></a>11-baseN顾</h2><p>打开 txt 文件，发现这样一段文字</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vm0xNFUxUXhWWGxVYTJoVVlteEthRlZxVG05alZteDBUbFU1VDFKc1NucFdWM014WVRBeFdHVklhRnBXUlRVelZqSjRWMDVzU25WUmJHaFlVMFZLYUZaR1VrTk9SbHBYVm01U2ExSXdXbGhWYkdRelpERlplRmt6YUZSaGVsWlhWRlpvUTFSc1dYcFJhemxoVmpOb00xa3dXbE5YUlRGWFkwVTFWMVpGV2pSV2JYaFRVakZSZUZOclpGaFdSbFU1</span><br></pre></td></tr></table></figure></div>
+
+<p>使用 Base64 连续解码 6 次获得 flag</p>
+<h2 id="12-流量"><a href="#12-流量" class="headerlink" title="12-流量"></a>12-流量</h2><p>考察内容: 流量分析</p>
+<p>使用工具: Wireshark</p>
+<p>使用 Wireshark 打开 <code>ftp.pcapng</code>, <code>Ctrl + F</code> ，选择 <code>分组字节流</code> 、 <code>字符串</code> 查找 <code>Stinger</code> 即可获得 flag</p>
+<h2 id="13-流量2"><a href="#13-流量2" class="headerlink" title="13-流量2"></a>13-流量2</h2><p>考察内容: 流量分析</p>
+<p>使用工具: Wireshark</p>
+<p>使用 Wireshark 打开 <code>13.pcapng</code>, 这类问题有个技巧，一般情况下 flag 都藏在 HTTP&#x2F;OK 附近，这里也不例外，发现上传了一张 jpg 文件，找到那一段 jpg 文件 <code>右键 &gt;&gt; 显示分组字节...</code> 即可获得 flag</p>
+<h2 id="14-word-frequency"><a href="#14-word-frequency" class="headerlink" title="14-word-frequency"></a>14-word-frequency</h2><p>考察内容: 词频统计</p>
+<p>使用工具: <a class="link"   target="_blank" rel="noopener" href="https://quipqiup.com/" >quipqiup<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>把文本内容扔进去分析一下，flag 在最后</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0   -1.380</span><br><span class="line">Zhejiang University of technology is the first crovincial and ministerial jointly built university in the eastern coastal region, the first leading university of the national Higher education innovation ability enhancement clan (2011 clan) Collaborative innovation Center, and the first key construction university in Zhejiang crovince. it is located in Hangzhou, a famous historical and cultural city in China and a scenic tourist destination. the school was founded in 1953, and its credecessor can be traced back to the Zhejiang Middle industrial school founded in 1910. it has gone through various stages of develocment, including Hangzhou Chemical school, Zhejiang Chemical Vocational school, Zhejiang institute of Chemical technology, and Zhejiang institute of technology. in 1993, it was renamed Zhejiang University of technology. the school has three camcuses, namely Chaohui, cingfeng, and Moganshan, covering an area of 3333 acres. it has 26 secondary colleges and 1 decartment, as well as an indecendent college - Zhijiang College. there are currently 20536 full-time undergraduate students, 14561 graduate students of various tyces, and 1037 international students on camcus. there are 3392 faculty members in school, including 2486 full-time teachers, including 5 academicians of the Cae Member, 1 academician of the Cas Member, 11 scecial excerts of Zhejiang crovince, 4 distinguished crofessors of Changjiang scholars of the Ministry of education, 7 winners of the national science fund for distinguished Young scholars, 13 leading talents of the national &quot;ten thousand talents crogram&quot;, 3 national famous teachers, 6 young Changjiang scholars of the Ministry of education, 14 winners of the national science fund for distinguished Young scholars, 3 young toc talents of the national &quot;ten thousand talents crogram&quot;, 10 young and middle-aged excerts with outstanding contributions at the national level, and 11 candidates of the &quot;ten Million talents crogram&quot; of the Ministry of Human Resources and social security. the school adheres to the fundamental task of cultivating virtue and talents, with toc-notch innovative talents as the guide, advanced acclied talents as the main body, and comcound talents as the characteristics, vigorously cultivating industry elites and leading talents with comcrehensive develocment in morality, intelligence, chysical fitness, aesthetics, and labor, rich catriotism, international cerscective, innovative scirit, and cractical ability. since its establishment, the school has trained and delivered over 300000 outstanding talents of various tyces to the country. there are currently 63 undergraduate enrollment majors, covering 12 categories including chilosochy, economics, law, education, literature, science, engineering, agriculture, medicine, management, art, and interdisciclinary studies. there are 13 doctoral degree authorization coints in first level disciclines, 2 doctoral crofessional degree authorization categories, 30 master&#x27;s degree authorization coints in first level disciclines, 3 master&#x27;s degree authorization coints in second level disciclines that are not covered by first level disciclines, 22 master&#x27;s crofessional degree authorization categories, and 13 costdoctoral mobile stations established. nine disciclines, including chemistry, engineering, materials science, environmental science and ecology, agricultural science, biology and biochemistry, comcuter science, charmacology and toxicology, and general social science, have entered the toc 1% of the global esi. among them, two disciclines, including chemistry and engineering, have entered the toc 1 ‰ of the global esi. the school adheres to serving the major needs of national and regional develocment as its own resconsibility, and focuses on strengthening the strategic layout of the cooceration network between government, industry, academia, research and acclication. there are currently 10 national level research clatforms and 69 crovincial and ministerial level research clatforms. the school has won more than 800 national and crovincial-level scientific research awards, including 24 national science and technology awards, ranking among the toc 40 universities in China in terms of the number of awards; 11 awards for outstanding achievements in humanities and social sciences from the Ministry of education. the school ranks 30th on the national University science and technology innovation Ranking and has been nominated for the global toc 400 academic Rankings of soft science World Universities. cublished 5 cacers in science, nature, and Cell as the first/corresconding unit in the cast three years; the total number of China catent gold awards and excellent awards ranks 6th among universities in the country; Ranked 7th on the list of catent transfers in Chinese universities. since the 13th five Year clan ceriod, there have been 13 new national key research and develocment crojects, 48 first crizes for science and technology at the crovincial and ministerial levels, 10 first crizes for excellent achievements in humanities and social sciences at the crovincial level, and 47 major horizontal crojects with a contract amount of more than 10 million yuan signed. in 2022, the school&#x27;s research funding received 1.107 billion yuan. the school has established comcrehensive cooceration or scientific and technological cooceration relationshics with more than 60 cities and counties (districts) inside and outside the crovince, serving more than 6600 entercrises and institutions. the flag is &#123;flag在这个位置&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="zipinzip"><a href="#zipinzip" class="headerlink" title="zipinzip"></a>zipinzip</h2><p>试着解压这个文件，发现这是个套娃压缩包，根据提示，使用如下 python 脚本进行解压</p>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extract_nested_zip</span>(<span class="params">zip_file_path, extract_path</span>):</span><br><span class="line">    <span class="keyword">with</span> zipfile.ZipFile(zip_file_path, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> zip_ref:</span><br><span class="line">        <span class="keyword">for</span> file_name <span class="keyword">in</span> zip_ref.namelist():</span><br><span class="line">            <span class="keyword">if</span> file_name.endswith(<span class="string">&#x27;.zip&#x27;</span>):</span><br><span class="line">                nested_zip_file = zip_ref.<span class="built_in">open</span>(file_name)</span><br><span class="line">                nested_zip_file_path = extract_path + <span class="string">&#x27;/&#x27;</span> + file_name</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(nested_zip_file_path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> output_file:</span><br><span class="line">                    output_file.write(nested_zip_file.read())</span><br><span class="line">                extract_nested_zip(nested_zip_file_path, extract_path)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                zip_ref.extract(file_name, extract_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例用法</span></span><br><span class="line">nested_zip_file_path = <span class="string">&#x27;11.zip&#x27;</span></span><br><span class="line">extract_path = <span class="string">&#x27;.&#x27;</span></span><br><span class="line"></span><br><span class="line">extract_nested_zip(nested_zip_file_path, extract_path)</span><br></pre></td></tr></table></figure></div>
+
+<p>打开 flag.txt 即可获得 flag</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 0329 CTF通识课测试1 WriteUp</li>
+        <li><strong>作者:</strong> Hervey</li>
+        <li><strong>创建于
+                :</strong> 2024-04-07 16:54:32</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2025-03-02 14:28:03
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://herveyb3b4.github.io/2024/04/07/CyberSecurity/CTF/Test-0329-WriteUp/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Misc/">#Misc</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/03/01/OSASK/OSASK-day0/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">《30天自制操作系统》学习笔记 day0 - 开个新坑</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/02/08/Alogrithm/Notes/Connectivity-Problem/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">连通性问题</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">0329 CTF通识课测试1 WriteUp</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-tail"><span class="nav-text">1-tail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-goose"><span class="nav-text">2-goose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-lsb"><span class="nav-text">3-lsb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-polar-light"><span class="nav-text">4-polar-light</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-spring"><span class="nav-text">5-spring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-bridge"><span class="nav-text">6-bridge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-nopassword"><span class="nav-text">7-nopassword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-birthday"><span class="nav-text">8-birthday</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-manyzip"><span class="nav-text">9-manyzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-baseXX"><span class="nav-text">10-baseXX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-baseN%E9%A1%BE"><span class="nav-text">11-baseN顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E6%B5%81%E9%87%8F"><span class="nav-text">12-流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E6%B5%81%E9%87%8F2"><span class="nav-text">13-流量2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-word-frequency"><span class="nav-text">14-word-frequency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipinzip"><span class="nav-text">zipinzip</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Hervey</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 18 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
