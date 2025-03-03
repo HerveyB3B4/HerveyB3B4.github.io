@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://herveyb3b4.github.io/2025/03/02/osask/osask-day1/"/>
+    <link rel="canonical" href="http://herveyb3b4.github.io/2025/03/03/osask/osask-day2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -23,14 +23,14 @@
         
         <meta name="description" content="Record My Coding Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言">
-<meta property="og:url" content="http://herveyb3b4.github.io/2025/03/02/OSASK/OSASK-day1/index.html">
+<meta property="og:title" content="《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门">
+<meta property="og:url" content="http://herveyb3b4.github.io/2025/03/03/OSASK/OSASK-day2/index.html">
 <meta property="og:site_name" content="Hervey&#39;s Blog">
 <meta property="og:description" content="Record My Coding Journey.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://q1.qlogo.cn/g?b=qq&nk=2963203299&s=100">
-<meta property="article:published_time" content="2025-03-02T04:56:52.000Z">
-<meta property="article:modified_time" content="2025-03-03T18:07:40.020Z">
+<meta property="article:published_time" content="2025-03-03T13:26:18.000Z">
+<meta property="article:modified_time" content="2025-03-03T20:22:22.500Z">
 <meta property="article:author" content="Hervey">
 <meta property="article:tag" content="30天自制操作系统">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
     
     <title>
         
-            《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言 | Hervey&#39;s Blog
+            《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门 | Hervey&#39;s Blog
         
     </title>
 
@@ -474,7 +474,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门</h1>
 			</div>
 			
 		</div>
@@ -495,15 +495,15 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2025-03-02 12:56:52</span>
-        <span class="mobile">2025-03-02 12:56:52</span>
+        <span class="desktop">2025-03-03 21:26:18</span>
+        <span class="mobile">2025-03-03 21:26:18</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-03-04 02:07:40</span>
-            <span class="mobile">2025-03-04 02:07:40</span>
+            <span class="desktop">2025-03-04 04:22:22</span>
+            <span class="mobile">2025-03-04 04:22:22</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -557,70 +557,215 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h2 id="十年前的读物"><a href="#十年前的读物" class="headerlink" title="十年前的读物"></a>十年前的读物</h2><p>刚翻开这本书就被灰尘扑了一脸，看来这本书真的有些年代了。</p>
-<h2 id="一切的开始-hello-world"><a href="#一切的开始-hello-world" class="headerlink" title="一切的开始 - hello, world"></a>一切的开始 - hello, world</h2><p>今天的任务是让计算机识别我们写的代码，并能够在裸机上显示 <code>hello, world</code>。</p>
-<p>我们知道高级语言 (C&#x2F;C++、Java、Python 等) 是不能够直接在裸机上运行的，需要经过编译转为二进制程序运行或使用解释器运行，特别的，Java 程序需要编译成为 Java 字节码，再通过 Java 虚拟机 (JVM) 运行。</p>
-<p>因此，在没有任何编译器程序、仅有裸机的情况下，只有低级语言能够直接在裸机上运行，作者这里采用机器语言和汇编语言分别实现了 <code>hello, world</code> 。</p>
-<h3 id="机器语言实现-hello-world"><a href="#机器语言实现-hello-world" class="headerlink" title="机器语言实现 hello, world"></a>机器语言实现 hello, world</h3><p>书里首先给出了一个二进制程序作为引入，作为一个 21 世纪 20 年代 (现在是 2025 年) 的程序员，我选择使用 <code>Visual Studio Code</code> 搭配 <code>Hex Editor</code> 插件编写程序 <code>helloos.img</code>（作为一个前 CTFer，我也强烈安利 <code>010 Editor</code>、<code>Win Hex</code> 等软件）。</p>
-<p>好吧，感觉这样写要写半天还容易错，还是用脚本写程序吧… <del>(事实证明就算用脚本也有可能写错)</del></p>
-<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><figcaption><span>gen.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;helloos.img&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">0x168000</span>:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">        text = <span class="string">b&#x27;\xeb\x4e\x90\x48\x45\x4c\x4c\x4f\x49\x50\x4c\x00\x02\x01\x01\x00\x02\xe0\x00\x40\x0b\xf0\x09\x00\x12\x00\x02\x00\x00\x00\x00\x00\x40\x0b\x00\x00\x00\x00\x29\xff\xff\xff\xff\x48\x45\x4c\x4c\x4f\x2d\x4f\x53\x20\x20\x20\x46\x41\x54\x31\x32\x20\x20\x20\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xb8\x00\x00\x8e\xd0\xbc\x00\x7c\x8e\xd8\x8e\xc0\xbe\x74\x7c\x8a\x04\x83\xc6\x01\x3c\x00\x74\x09\xb4\x0e\xbb\x0f\x00\xcd\x10\xeb\xee\xf4\xeb\xfd\x0a\x0a\x68\x65\x6c\x6c\x6f\x2c\x20\x77\x6f\x72\x6c\x64\x0a\x00\x00\x00\x00\x00&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> i == <span class="number">0x1FE</span>:</span><br><span class="line">        text = <span class="string">b&#x27;\x55\xaa\xf0\xff\xff&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> i == <span class="number">0x1400</span>:</span><br><span class="line">        text = <span class="string">b&#x27;\xf0\xff\xff&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        text = <span class="string">b&#x27;\x00&#x27;</span></span><br><span class="line">    file.write(text)</span><br><span class="line">    i += <span class="built_in">len</span>(text)</span><br><span class="line"></span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure></div>
+			<h2 id="磨刀不误砍柴工"><a href="#磨刀不误砍柴工" class="headerlink" title="磨刀不误砍柴工"></a>磨刀不误砍柴工</h2><p>昨天初步实现了启动显示 <code>hello, world</code> 的功能，可喜可贺！</p>
+<p>但是这样的开发方式仍然存在不少的问题。</p>
+<p>一方面，昨天的程序依然是对于机器语言的简单翻译，并没有接触到真正核心的汇编语言，也没有发挥到汇编语言助记符“助记”的功能；</p>
+<p>另一方面，每次制作系统镜像都要依次运行 <code>asm.bat</code> 、<code>install.bat</code> 、 <code>run.bat</code> 等批处理程序，着实有些麻烦。</p>
+<p>所以，今天我们的工作就是进一步优化程序与开发流程。</p>
+<h3 id="程序优化"><a href="#程序优化" class="headerlink" title="程序优化"></a>程序优化</h3><p>汇编语言除了 <code>DB</code> 、 <code>DW</code> 、 <code>DD</code> 、 <code>RESB</code> 这类 <strong>数据定义类伪指令</strong> 助记符外，还有着许多其他类型的指令助记符，我们耳熟能详的就有 <code>MOV</code> 、 <code>ADD</code> 等。</p>
+<p>所以，使用一些新的类型的指令，结合寄存器，我们能够将程序进一步进行去机器语言化：</p>
+<div class="code-container" data-rel="X86asm"><figure class="iseeu highlight x86asm"><figcaption><span>helloos3.nas</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; hello-os</span></span><br><span class="line"><span class="comment">; TAB=4</span></span><br><span class="line"></span><br><span class="line">    ORG     <span class="number">0x7c00</span>          <span class="comment">; 指明程序的装载地址</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 以下这段是标准AFT2格式软盘专用的代码</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">JMP</span>     entry</span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x90</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;HELLOIPL&quot;</span>      <span class="comment">; 启动区的名称可以是任意的字符串（8字节）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">512</span>             <span class="comment">; 每个扇区（sector）的大小（必须为512字节）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">1</span>               <span class="comment">; 簇（cluster）的大小（必须为1个扇区）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">1</span>               <span class="comment">; FAT的起始位置（一般从第一个扇区开始）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">2</span>               <span class="comment">; FAT的个数（必须为2）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">224</span>             <span class="comment">; 根目录的大小（一般设成224项）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">2880</span>            <span class="comment">; 该磁盘的大小（必须是2880扇区）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>            <span class="comment">; 磁盘的种类（必须是0xf0）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">9</span>               <span class="comment">; FAT的长度（必须是9扇区）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">18</span>              <span class="comment">; 1个磁道（track）有几个扇区</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">2</span>               <span class="comment">; 磁头数（必须是2）</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">0</span>               <span class="comment">; 不使用分区，必须是0</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">2880</span>            <span class="comment">; 重写一次磁盘大小</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0x29</span>        <span class="comment">; 意义不明，固定</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">0xffffffff</span>      <span class="comment">; （可能是）卷标号码</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;HELLO-OS   &quot;</span>   <span class="comment">; 磁盘的名称（11字节）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;FAT12   &quot;</span>      <span class="comment">; 磁盘格式名称（8字节）</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">18</span>              <span class="comment">; 先空出18字节</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 程序核心</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">entry:</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">AX</span>,<span class="number">0</span>            <span class="comment">; 初始化寄存器</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">SS</span>,<span class="built_in">AX</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">SP</span>,<span class="number">0x7c00</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">DS</span>,<span class="built_in">AX</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">ES</span>,<span class="built_in">AX</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">SI</span>,msg</span><br><span class="line"><span class="symbol">putloop:</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">AL</span>,[<span class="built_in">SI</span>]</span><br><span class="line">    <span class="keyword">ADD</span>     <span class="built_in">SI</span>,<span class="number">1</span>            <span class="comment">; 显示一个文字</span></span><br><span class="line">    <span class="keyword">CMP</span>     <span class="built_in">AL</span>,<span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">JE</span>      fin</span><br><span class="line">    <span class="keyword">MOV</span>     <span class="number">AH</span>,<span class="number">0x0e</span>         <span class="comment">; 显示一个文字</span></span><br><span class="line">    <span class="keyword">MOV</span>     <span class="built_in">BX</span>,<span class="number">15</span>           <span class="comment">; 指定字符颜色</span></span><br><span class="line">    <span class="keyword">INT</span>     <span class="number">0x10</span>            <span class="comment">; 调用显卡BIOS</span></span><br><span class="line">    <span class="keyword">JMP</span>     putloop</span><br><span class="line"><span class="symbol">fin:</span></span><br><span class="line">    <span class="keyword">HLT</span>                     <span class="comment">; 让CPU停止，等待指令</span></span><br><span class="line">    <span class="keyword">JMP</span>     fin             <span class="comment">; 无限循环</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">msg:</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x0a</span>, <span class="number">0x0a</span>      <span class="comment">; 2个换行</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;hello, world&quot;</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x0a</span>            <span class="comment">; 换行</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">0x7dfe</span>-$        <span class="comment">; 填写0x00,直到 0x001fe</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x55</span>, <span class="number">0xaa</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 以下是启动区以外部分的输出</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">4600</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">1469432</span></span><br></pre></td></tr></table></figure></div>
 
-<p>生成 <code>helloos.img</code> 之后，使用作者提供的工具链（<a class="link"   target="_blank" rel="noopener" href="http://hrb.osask.jp/" >在这里下载<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>），将其装载到 <code>qemu</code> 之中，就能够 <del>顺利地</del> 看到 <code>hello, world</code> 字样了。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/OSASK/OSASK-day1/hello-world.png"
-                      alt="hello, world"
-                ></p>
-<h3 id="使用汇编语言实现-hello-world"><a href="#使用汇编语言实现-hello-world" class="headerlink" title="使用汇编语言实现 hello, world"></a>使用汇编语言实现 hello, world</h3><blockquote>
-<p>作者作者 <br>你的机器语言确实很强 <br>但还是太吃操作了 <br>有没有什么简单又清晰的语言推荐一下 <br>有的朋友，有的 <br>像这么简单的语言还有一种 <br>就是 <em>汇编语言</em></p>
-</blockquote>
-<p>为了提高代码的可读性和持续性，作者介绍了汇编语言实现 <code>hello, world</code> 的方式。</p>
-<p>第一种实现方式其实还是机器语言的直译：</p>
-<div class="code-container" data-rel="X86asm"><figure class="iseeu highlight x86asm"><figcaption><span>helloos1.nas</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">DB</span>      <span class="number">0xeb</span>, <span class="number">0x4e</span>, <span class="number">0x90</span>, <span class="number">0x48</span>, <span class="number">0x45</span>, <span class="number">0x4c</span>, <span class="number">0x4c</span>, <span class="number">0x4f</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x49</span>, <span class="number">0x50</span>, <span class="number">0x4c</span>, <span class="number">0x00</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x01</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x02</span>, <span class="number">0xe0</span>, <span class="number">0x00</span>, <span class="number">0x40</span>, <span class="number">0x0b</span>, <span class="number">0xf0</span>, <span class="number">0x09</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x12</span>, <span class="number">0x00</span>, <span class="number">0x02</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x40</span>, <span class="number">0x0b</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x29</span>, <span class="number">0xff</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x48</span>, <span class="number">0x45</span>, <span class="number">0x4c</span>, <span class="number">0x4c</span>, <span class="number">0x4f</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x2d</span>, <span class="number">0x4f</span>, <span class="number">0x53</span>, <span class="number">0x20</span>, <span class="number">0x20</span>, <span class="number">0x20</span>, <span class="number">0x46</span>, <span class="number">0x41</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x54</span>, <span class="number">0x31</span>, <span class="number">0x32</span>, <span class="number">0x20</span>, <span class="number">0x20</span>, <span class="number">0x20</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">RESB</span>    <span class="number">16</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xb8</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x8e</span>, <span class="number">0xd0</span>, <span class="number">0xbc</span>, <span class="number">0x00</span>, <span class="number">0x7c</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x8e</span>, <span class="number">0xd8</span>, <span class="number">0x8e</span>, <span class="number">0xc0</span>, <span class="number">0xbe</span>, <span class="number">0x74</span>, <span class="number">0x7c</span>, <span class="number">0x8a</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x04</span>, <span class="number">0x83</span>, <span class="number">0xc6</span>, <span class="number">0x01</span>, <span class="number">0x3c</span>, <span class="number">0x00</span>, <span class="number">0x74</span>, <span class="number">0x09</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xb4</span>, <span class="number">0x0e</span>, <span class="number">0xbb</span>, <span class="number">0x0f</span>, <span class="number">0x00</span>, <span class="number">0xcd</span>, <span class="number">0x10</span>, <span class="number">0xeb</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xee</span>, <span class="number">0xf4</span>, <span class="number">0xeb</span>, <span class="number">0xfd</span>, <span class="number">0x0a</span>, <span class="number">0x0a</span>, <span class="number">0x68</span>, <span class="number">0x65</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x6c</span>, <span class="number">0x6c</span>, <span class="number">0x6f</span>, <span class="number">0x2c</span>, <span class="number">0x20</span>, <span class="number">0x77</span>, <span class="number">0x6f</span>, <span class="number">0x72</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x6c</span>, <span class="number">0x64</span>, <span class="number">0x0a</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">RESB</span>    <span class="number">368</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x55</span>, <span class="number">0xaa</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">RESB</span>    <span class="number">4600</span></span><br><span class="line"><span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line"><span class="built_in">RESB</span>    <span class="number">1469432</span></span><br></pre></td></tr></table></figure></div>
-
-<p>依旧和机器语言一样不具有可读性（其实就是机器语言），不过至少能够在一个屏幕上显示了。</p>
-<p>第二种实现方式则更具有可读性，更像一个“程序”了：</p>
-<div class="code-container" data-rel="X86asm"><figure class="iseeu highlight x86asm"><figcaption><span>helloos2.nas</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; hello-os</span></span><br><span class="line"><span class="comment">; TAB=4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 以下这段是标准AFT2格式软盘专用的代码</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xeb</span>, <span class="number">0x4e</span>, <span class="number">0x90</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;HELLOIPL&quot;</span>      <span class="comment">; 启动区的名称可以是任意的字符串（8字节）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">512</span>             <span class="comment">; 每个扇区（sector）的大小（必须为512字节）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">1</span>               <span class="comment">; 簇（cluster）的大小（必须为1个扇区）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">1</span>               <span class="comment">; FAT的起始位置（一般从第一个扇区开始）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">2</span>               <span class="comment">; FAT的个数（必须为2）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">224</span>             <span class="comment">; 根目录的大小（一般设成224项）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">2880</span>            <span class="comment">; 该磁盘的大小（必须是2880扇区）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>            <span class="comment">; 磁盘的种类（必须是0xf0）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">9</span>               <span class="comment">; FAT的长度（必须是9扇区）</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">18</span>              <span class="comment">; 1个磁道（track）有几个扇区</span></span><br><span class="line">    <span class="built_in">DW</span>      <span class="number">2</span>               <span class="comment">; 磁头数（必须是2）</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">0</span>               <span class="comment">; 不使用分区，必须是0</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">2880</span>            <span class="comment">; 重写一次磁盘大小</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0x29</span>        <span class="comment">; 意义不明，固定</span></span><br><span class="line">    <span class="built_in">DD</span>      <span class="number">0xffffffff</span>      <span class="comment">; （可能是）卷标号码</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;HELLO-OS   &quot;</span>   <span class="comment">; 磁盘的名称（11字节）</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;FAT12   &quot;</span>      <span class="comment">; 磁盘格式名称（8字节）</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">18</span>              <span class="comment">; 先空出18字节</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 程序主体</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xb8</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x8e</span>, <span class="number">0xd0</span>, <span class="number">0xbc</span>, <span class="number">0x00</span>, <span class="number">0x7c</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x8e</span>, <span class="number">0xd8</span>, <span class="number">0x8e</span>, <span class="number">0xc0</span>, <span class="number">0xbe</span>, <span class="number">0x74</span>, <span class="number">0x7c</span>, <span class="number">0x8a</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x04</span>, <span class="number">0x83</span>, <span class="number">0xc6</span>, <span class="number">0x01</span>, <span class="number">0x3c</span>, <span class="number">0x00</span>, <span class="number">0x74</span>, <span class="number">0x09</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xb4</span>, <span class="number">0x0e</span>, <span class="number">0xbb</span>, <span class="number">0x0f</span>, <span class="number">0x00</span>, <span class="number">0xcd</span>, <span class="number">0x10</span>, <span class="number">0xeb</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xee</span>, <span class="number">0xf4</span>, <span class="number">0xeb</span>, <span class="number">0xfd</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 信息显示部分</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x0a</span>, <span class="number">0x0a</span>      <span class="comment">; 2个换行</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="string">&quot;hello, world&quot;</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x0a</span>            <span class="comment">; 换行</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">0x1fe</span>-$         <span class="comment">; 填写0x00,直到 0x001fe</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0x55</span>, <span class="number">0xaa</span></span><br><span class="line"></span><br><span class="line"><span class="comment">; 以下是启动区以外部分的输出</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">4600</span></span><br><span class="line">    <span class="built_in">DB</span>      <span class="number">0xf0</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span></span><br><span class="line">    <span class="built_in">RESB</span>    <span class="number">1469432</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><table>
+<p>可以发现，作者在这里已经对程序的实现了初步的模块化，其中所涉及的新指令整理如下：</p>
+<table>
 <thead>
 <tr>
-<th align="center">汇编指令</th>
-<th align="center">全称</th>
-<th align="center">作用</th>
+<th align="center">汇编指令&#x2F;指令</th>
+<th align="center">来源</th>
+<th align="left">作用</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><code>RESB</code></td>
-<td align="center">reseve byte</td>
-<td align="center">将指定的地址空出，并在空出的地址上自动填入 <code>0x00</code></td>
+<td align="center"><code>ORG</code></td>
+<td align="center">origin</td>
+<td align="left">伪指令，将程序装载到内存中指定的地址，根据 IBM 对内存的分配，引导程序应从 <code>0x7c00</code> 开始装载</td>
 </tr>
 <tr>
-<td align="center"><code>DB</code></td>
-<td align="center">define byte</td>
-<td align="center">往文件里直接写入 1 个字节 &#x2F; 一串字符</td>
+<td align="center"><code>JMP</code></td>
+<td align="center">jump</td>
+<td align="left">（无条件）跳转指令，无条件跳转到指定标签对应的内存地址</td>
 </tr>
 <tr>
-<td align="center"><code>DW</code></td>
-<td align="center">define word</td>
-<td align="center">往文件里直接写入 2 个字节</td>
+<td align="center"><code>MOV</code></td>
+<td align="center">move</td>
+<td align="left">赋值指令，将数据从一个位置复制到另一个位置，一般需要使用 <code>BYTE</code> ( 1 字节)、<code>WORD</code> ( 2 字节)、<code>DWORD</code> ( 4 字节) 指定数据</td>
 </tr>
 <tr>
-<td align="center"><code>DD</code></td>
-<td align="center">define double-word</td>
-<td align="center">往文件里直接写入 4 个字节</td>
+<td align="center"><code>ADD</code></td>
+<td align="center">add</td>
+<td align="left">加法指令，将两个操作数相加，结果存储到第一个操作数中</td>
+</tr>
+<tr>
+<td align="center"><code>CMP</code></td>
+<td align="center">compare</td>
+<td align="left">比较指令，比较两个操作数，设置标志寄存器 <code>ZF</code> 中（相同时 <code>ZF=1</code> 不同时 <code>ZF=0</code>）</td>
+</tr>
+<tr>
+<td align="center"><code>JE</code></td>
+<td align="center">jump if equal</td>
+<td align="left">条件跳转指令，如果比较结果为相等（ <code>ZF = 1</code> ），则跳转到指定标签</td>
+</tr>
+<tr>
+<td align="center"><code>INT</code></td>
+<td align="center">interrupt</td>
+<td align="left">中断指令，触发指定的中断，这里调用 BIOS 中断 <code>0x10</code> 用于显示字符</td>
+</tr>
+<tr>
+<td align="center"><code>HLT</code></td>
+<td align="center">halt</td>
+<td align="left">停止指令，停止 CPU 执行，进入休眠状态，防止 CPU 无意义地空转</td>
 </tr>
 </tbody></table>
-<ul>
-<li><code>$</code> 目前可以理解为指代当前行的字节数（具体含义后续章节会补充）</li>
-</ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>就这样，第一天的学习在大段的的十六进制码中结束了，说说我的感受吧。</p>
-<h4 id="硬件发展更迭好快"><a href="#硬件发展更迭好快" class="headerlink" title="硬件发展更迭好快"></a>硬件发展更迭好快</h4><p>这本书里使用 <strong>软盘</strong> 装载操作系统，“这是什么？”或许是大部分出生在 21 世纪的人（包括我）看到这两个字的第一反应，毕竟我们只在保存按钮和一些视频中看见过软盘的样貌，现在容量更大、存取速度更快的存储设备已经完全取代了软盘、光盘等等媒介。</p>
-<p>在我们的父母甚至祖父母那一辈却不然，他们经历了计算机在国内引进和发展的过程，亲眼见证了计算机体积的缩小，见证了制造技术的不断改进，见证了移动设备的兴起，或许他们读这本书的感受会和我们不一样。</p>
-<p>而在我们之后出生的人，他们接触到的是一个高度发展的信息时代，旧的设备几乎被完全淘汰，新的设备不断更迭，很多人甚至不会还使用电脑就会使用手机了（其实我们这辈就有），他们又会如何理解和认识软盘之类的设备， 又会如何看待这些接近硬件层面的技术呢？</p>
-<h4 id="低级语言好麻烦"><a href="#低级语言好麻烦" class="headerlink" title="低级语言好麻烦"></a>低级语言好麻烦</h4><p>今天这三个程序的编写（仅仅只是显示一个 <code>Hello, world</code> ）就耗费了一下午时间，而且还是在有完整工具链和现代化工具（甚至使用 Python 脚本辅助）的情况下实现的，很难想象在半个多世纪以前，科学家们是如何一步步实现如此庞大的计算机系统的，又是如何调试运行的。</p>
-<p>学习这些底层技术知识，重走来时路，或许是我们感受前人智慧的一种好方法，万一有一天我的经历也会成为他人阅读的历史呢？</p>
+<p>当然，这里已经开始使用寄存器进行数据的临时存储，因此在这里也整理了一下作者介绍的寄存器：</p>
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th>分类</th>
+            <th colspan="2">名称</th>
+            <th>32 位寄存器</th>
+            <th>16 位寄存器</th>
+            <th>8 位寄存器</th>
+            <th>名称</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="8">通用寄存器</td>
+            <td rowspan="2">累加寄存器</td>
+            <td rowspan="2">accumulator</td>
+            <td rowspan="2">EAX</td>
+            <td rowspan="2">AX</td>
+            <td>AL</td>
+            <td>accumulator low</td>
+        </tr>
+        <tr>
+            <td>AH</td>
+            <td>accumulator high</td>
+        </tr>
+        <tr>
+            <td rowspan="2">计数寄存器</td>
+            <td rowspan="2">counter</td>
+            <td rowspan="2">ECX</td>
+            <td rowspan="2">CX</td>
+            <td>CL</td>
+            <td>counter low</td>
+        </tr>
+        <tr>
+            <td>CH</td>
+            <td>counter high</td>
+        </tr>
+        <tr>
+            <td rowspan="2">数据寄存器</td>
+            <td rowspan="2">data</td>
+            <td rowspan="2">EDX</td>
+            <td rowspan="2">DX</td>
+            <td>DL</td>
+            <td>data low</td>
+        </tr>
+        <tr>
+            <td>DH</td>
+            <td>data high</td>
+        </tr>
+        <tr>
+            <td rowspan="2">基址寄存器</td>
+            <td rowspan="2">base</td>
+            <td rowspan="2">EBX</td>
+            <td rowspan="2">BX</td>
+            <td>BL</td>
+            <td>base low</td>
+        </tr>
+        <tr>
+            <td>BH</td>
+            <td>base high</td>
+        </tr>
+        <tr>
+            <td rowspan="2">指针寄存器</td>
+            <td>栈指针寄存器</td>
+            <td>stack pointer</td>
+            <td>ESP</td>
+            <td>SP</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>基址指针寄存器</td>
+            <td>base pointer</td>
+            <td>EBP</td>
+            <td>BP</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td rowspan="2">变址寄存器</td>
+            <td>源变址寄存器</td>
+            <td>source index</td>
+            <td>ESI</td>
+            <td>SI</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>目的变址寄存器</td>
+            <td>destination index</td>
+            <td>EDI</td>
+            <td>DI</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td rowspan="6">段寄存器</td>
+            <td>附加段寄存器</td>
+            <td>extra segment</td>
+            <td>-</td>
+            <td>ES</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>代码段寄存器</td>
+            <td>code segment</td>
+            <td>-</td>
+            <td>CS</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>栈段寄存器</td>
+            <td>stack segment</td>
+            <td>-</td>
+            <td>SS</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>数据段寄存器</td>
+            <td>data segment</td>
+            <td>-</td>
+            <td>DS</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>segment part 2</td>
+            <td>-</td>
+            <td>FS</td>
+            <td colspan="3">-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>segment part 3</td>
+            <td>-</td>
+            <td>GS</td>
+            <td colspan="3">-</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>除此之外，还有一个值得注意的语法: <code>[]</code> 表示的是内存地址，例如 <code>[0x00]</code> 代表内存中 <code>0x00</code> 位的地址。</p>
+<h3 id="开发流程优化-Makefile-入门"><a href="#开发流程优化-Makefile-入门" class="headerlink" title="开发流程优化 - Makefile 入门"></a>开发流程优化 - Makefile 入门</h3><p>这两天编写了不少程序，每次编写完汇编程序后，我们都需要通过作者提供的批处理文件和工具制作镜像文件并运行测试，这样的开发流程效率相对来说还是比较低的，是否有一种工具能让我们像正常开发项目一样通过一个或几个简单的命令完成整个工作流呢？作者由此引入了 <code>make</code> 这个强有力的开发工具，使用 <code>Makefile</code> 提高我们的编程效率。</p>
+<div class="code-container" data-rel="Makefile"><figure class="iseeu highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认动作</span></span><br><span class="line"></span><br><span class="line">default :</span><br><span class="line">	../z_tools/make.exe img</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件生成规则</span></span><br><span class="line"></span><br><span class="line">ipl.bin : ipl.nas Makefile</span><br><span class="line">	../z_tools/nask.exe ipl.nas ipl.bin ipl.lst</span><br><span class="line"></span><br><span class="line">helloos.img : ipl.bin Makefile</span><br><span class="line">	../z_tools/edimg.exe	imgin:../z_tools/fdimg0at.tek \</span><br><span class="line">		wbinimg src:ipl.bin len:512 from:0 to:0	imgout:helloos.img</span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令</span></span><br><span class="line"></span><br><span class="line">asm :</span><br><span class="line">	../z_tools/make.exe -r ipl.bin</span><br><span class="line"></span><br><span class="line">img :</span><br><span class="line">	../z_tools/make.exe -r helloos.img</span><br><span class="line"></span><br><span class="line">run :</span><br><span class="line">	../z_tools/make.exe img</span><br><span class="line">	copy helloos.img ..\z_tools\qemu\fdimage0.bin</span><br><span class="line">	../z_tools/make.exe -C ../z_tools/qemu</span><br><span class="line"></span><br><span class="line">install :</span><br><span class="line">	../z_tools/make.exe img</span><br><span class="line">	../z_tools/imgtol.com w a: helloos.img</span><br><span class="line"></span><br><span class="line">clean :</span><br><span class="line">	-del ipl.bin</span><br><span class="line">	-del ipl.lst</span><br><span class="line"></span><br><span class="line">src_only :</span><br><span class="line">	../z_tools/make.exe clean</span><br><span class="line">	-del helloos.img</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p><code>Makefile</code> 的基础语法规则其实挺简单的：</p>
+<div class="code-container" data-rel="Makefile"><figure class="iseeu highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">target : dependencies</span><br><span class="line">    command</span><br></pre></td></tr></table></figure></div>
+
+<p><code>target</code> 是目标，可以是一个具体的生成文件，也可以是一个命令（称为伪目标）。</p>
+<p><code>dependencies</code> 是依赖，指生成目标需要的文件，当依赖列表为空时 <code>target</code> 即为伪目标。</p>
+<p><code>command</code> 是命令，相当于批处理文件中的内容。</p>
+<p><code>Makefile</code> 可以理解为一个批处理文件的集合，我觉得现在很多工具例如 <code>npm</code> 、 <code>pip</code> 、 <code>conda</code> 都借鉴了 <code>Makefile</code> 的想法，并通过引入包的概念简化并加速了我们的开发流程。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>今天的代码量相比昨天小了不少，但是需要理解的东西越来越多了，只能说“磨刀不误砍柴工”吧，毕竟后续的开发会越来越复杂，没有易于维护的代码与方便的工具链可能会阻碍我们的开发工作。</p>
 
 		</div>
 
@@ -628,18 +773,18 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言</li>
+        <li><strong>标题:</strong> 《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门</li>
         <li><strong>作者:</strong> Hervey</li>
         <li><strong>创建于
-                :</strong> 2025-03-02 12:56:52</li>
+                :</strong> 2025-03-03 21:26:18</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2025-03-04 02:07:40
+                    :</strong> 2025-03-04 04:22:22
             </li>
         
         <li>
-            <strong>链接:</strong> https://herveyb3b4.github.io/2025/03/02/OSASK/OSASK-day1/
+            <strong>链接:</strong> https://herveyb3b4.github.io/2025/03/03/OSASK/OSASK-day2/
         </li>
         <li>
             <strong>
@@ -672,23 +817,11 @@
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
-			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2025/03/03/OSASK/OSASK-day2/">
-					<span class="left arrow-icon flex justify-center items-center">
-						<i class="fa-solid fa-chevron-left"></i>
-					</span>
-					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门</span>
-						<span class="post-nav-item">上一篇</span>
-					</span>
-				</a>
-			</div>
-			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2025/03/01/OSASK/OSASK-day0/">
+				<a class="next" rel="next" href="/2025/03/02/OSASK/OSASK-day1/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">《30天自制操作系统》学习笔记 day0 - 开个新坑</span>
+						<span class="post-nav-title-item">《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言</span>
 						<span class="post-nav-item">下一篇</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -709,8 +842,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
-		<div class="page-title">《30天自制操作系统》学习笔记 day1 - 机器语言到汇编语言</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%B9%B4%E5%89%8D%E7%9A%84%E8%AF%BB%E7%89%A9"><span class="nav-text">十年前的读物</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%88%87%E7%9A%84%E5%BC%80%E5%A7%8B-hello-world"><span class="nav-text">一切的开始 - hello, world</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0-hello-world"><span class="nav-text">机器语言实现 hello, world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0-hello-world"><span class="nav-text">使用汇编语言实现 hello, world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-text">笔记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
+		<div class="page-title">《30天自制操作系统》学习笔记 day2 - 深入汇编语言与 Makefile 入门</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%A8%E5%88%80%E4%B8%8D%E8%AF%AF%E7%A0%8D%E6%9F%B4%E5%B7%A5"><span class="nav-text">磨刀不误砍柴工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E4%BC%98%E5%8C%96"><span class="nav-text">程序优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B%E4%BC%98%E5%8C%96-Makefile-%E5%85%A5%E9%97%A8"><span class="nav-text">开发流程优化 - Makefile 入门</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
 
 	</div>
 </div>
