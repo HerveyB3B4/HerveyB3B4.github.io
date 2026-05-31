@@ -10,17 +10,17 @@
 
   website-title: "HerveyB3B4",
   author: "HerveyB3B4",
-  description: "HerveyB3B4 的个人主页",
+  description: "HerveyB3B4's personal blog, sharing knowledge and insights on technology, programming, and more.",
   website-url: "https://herveyb3b4.github.io/",
   lang: "zh",
   feed-dir: ("/Blog/",),
 
   header-elements: (
     [HerveyB3B4],
-    [],
+    [Learn, Build, Share.],
   ),
   footer-elements: (
-    "© 2026 HerveyB3B4. All rights reserved. · ",
-    [#link("https://github.com/HerveyB3B4")[GitHub] · #link("mailto:herveyb3b4@gmail.com")[Email] · Powered by #link("https://github.com/Yousa-Mirage/Tufted-Blog-Template")[Tufted-Blog-Template]],
+    [© 2026 HerveyB3B4. All rights reserved.],
+    [Powered by #link("https://github.com/Yousa-Mirage/Tufted-Blog-Template")[Tufted-Blog-Template]],
   ),
 )
