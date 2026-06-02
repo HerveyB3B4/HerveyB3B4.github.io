@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="202" version="1.1" viewBox="0 0 373 202" width="373">
+   <path d="M297,55 H327" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M297,165 H327" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M47,15 H67" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M137,95 H157" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M47,55 H157" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M47,145 H87" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <circle cx="67" cy="185" fill="#000000" r="5" stroke="none" stroke-width="3"/>
+   <circle cx="87" cy="145" fill="#000000" r="5" stroke="none" stroke-width="3"/>
+   <rect fill="none" height="18" stroke="#000000" stroke-linecap="square" stroke-width="2" width="18" x="29" y="7"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="31" y="22">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="5" y="23">A0</text>
+   <circle cx="47" cy="15" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <rect fill="none" height="18" stroke="#000000" stroke-linecap="square" stroke-width="2" width="18" x="29" y="47"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="31" y="62">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="5" y="63">A1</text>
+   <circle cx="47" cy="55" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <rect fill="none" height="18" stroke="#000000" stroke-linecap="square" stroke-width="2" width="18" x="29" y="137"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="31" y="152">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="5" y="153">A2</text>
+   <circle cx="47" cy="145" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <rect fill="none" height="18" stroke="#000000" stroke-linecap="square" stroke-width="2" width="18" x="29" y="177"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="31" y="192">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="5" y="193">A3</text>
+   <circle cx="47" cy="185" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <path d="M62,10 L72,20" fill="none" stroke="#FF0000" stroke-linecap="square" stroke-width="1"/>
+   <path d="M62,20 L72,10" fill="none" stroke="#FF0000" stroke-linecap="square" stroke-width="1"/>
+   <circle cx="67" cy="15" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="338" cy="56" fill="none" r="9" stroke="#000000" stroke-width="2"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="331" y="62">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="349" y="63">Y0</text>
+   <circle cx="327" cy="55" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <circle cx="338" cy="166" fill="none" r="9" stroke="#000000" stroke-width="2"/>
+   <text fill="#000000" font-family="sans-serif" font-size="12" x="331" y="172">x1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" x="349" y="173">Y1</text>
+   <circle cx="327" cy="165" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <path d="M127,95 L108,88 V102 L127,95" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="2"/>
+   <circle cx="132" cy="95" fill="none" r="4.5" stroke="#000000" stroke-width="2"/>
+   <circle cx="137" cy="95" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <circle cx="107" cy="95" fill="#000000" r="2" stroke="none" stroke-width="2"/>
+   <path d="M182,100 A25,25 90 0,0 182,50" fill="none" stroke="#000000" stroke-width="2"/>
+   <path d="M182,50 H158 V100 H182" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="2"/>
+   <path d="M247,35 H67 V185" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M207,75 H247" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M297,55 Q277,30 247,30 Q260,55 247,80 Q277,80 297,55 Z" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="2"/>
+   <path d="M107,95 H87 V145 H247" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M47,185 H247" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M297,165 Q277,140 247,140 Q260,165 247,190 Q277,190 297,165 Z" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="2"/>
+</svg>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="411" version="1.1" viewBox="0 0 465 411" width="465">
+   <path d="M155,135 H105 V185 H45" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,235 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,225 H145 V215 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,245 H145 V255 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,215 H135 V195 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,255 H135 V275 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,205 H125 V175 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,265 H125 V295 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,155 H75 V75 H165" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,285 H105 V335 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M155,115 H95 V175 H45" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,295 H95 V355 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,195 H115 V155 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,275 H115 V315 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,165 H85 V95 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M45,305 H85 V375 H155" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <circle cx="155" cy="75" fill="#000000" r="5" stroke="none" stroke-width="3"/>
+   <path d="M375,75 H429" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M375,95 H385 V85 H429" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M375,115 H395 V95 H429" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M375,135 H405 V105 H429" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="3"/>
+   <path d="M429,104 V71 L434,66" fill="none" stroke="#000000" stroke-linecap="square" stroke-width="5"/>
+   <text fill="#000000" font-family="sans-serif" font-size="7" x="422" y="72">0</text>
+   <text fill="#000000" font-family="sans-serif" font-size="7" x="422" y="82">1</text>
+   <text fill="#000000" font-family="sans-serif" font-size="7" x="422" y="92">2</text>
+   <text fill="#000000" font-family="sans-serif" font-size="7" x="422" y="102">3</text>
+   <circle cx="415" cy="75" fill="#000000" r="2" stroke="none" stroke-width="5"/>
+   <circle cx="415" cy="85" fill="#000000" r="2" stroke="none" stroke-width="5"/>
+   <circle cx="415" cy="95" fill="#000000" r="2" stroke="none" stroke-width="5"/>
+   <circle cx="415" cy="105" fill="#000000" r="2" stroke="none" stroke-width="5"/>
+   <rect fill="#404040" height="168" stroke="none" stroke-linecap="square" stroke-width="1" width="38" x="6" y="146"/>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="152"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,152)" x="33" y="152">1</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="162"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,162)" x="33" y="162">2</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="172"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,172)" x="33" y="172">3</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="182"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,182)" x="33" y="182">4</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="192"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,192)" x="33" y="192">5</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="202"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,202)" x="33" y="202">6</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="212"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,212)" x="33" y="212">7</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="222"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,222)" x="33" y="222">8</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="232"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,232)" x="33" y="232">9</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="242"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,240)" x="33" y="240">10</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="252"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,250)" x="33" y="250">11</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="262"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,260)" x="33" y="260">12</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="272"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,270)" x="33" y="270">13</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="282"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,280)" x="33" y="280">14</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="292"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,290)" x="33" y="290">15</text>
+   <rect fill="#FFFFFF" height="6" stroke="none" stroke-linecap="square" stroke-width="1" width="20" x="9" y="302"/>
+   <text fill="#FFFFFF" font-family="sans-serif" font-size="7" transform="rotate(-270,33,300)" x="33" y="300">16</text>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="153"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="163"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="173"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="183"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="193"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="203"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="213"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="223"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="233"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="243"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="253"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="263"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="273"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="283"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="293"/>
+   <rect fill="#808080" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="9" x="10" y="303"/>
+   <circle cx="45" cy="155" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="165" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="175" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="185" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="195" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="205" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="215" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="225" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="235" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="245" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="255" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="265" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="275" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="285" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="295" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="45" cy="305" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <rect fill="none" height="60" stroke="#000000" stroke-linecap="square" stroke-width="2" width="40" x="420" y="5"/>
+   <rect fill="#404040" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="19" x="428" y="13"/>
+   <rect fill="#404040" height="19" stroke="none" stroke-linecap="square" stroke-width="1" width="4" x="448" y="15"/>
+   <rect fill="#404040" height="19" stroke="none" stroke-linecap="square" stroke-width="1" width="4" x="448" y="35"/>
+   <rect fill="#404040" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="19" x="428" y="52"/>
+   <rect fill="#404040" height="19" stroke="none" stroke-linecap="square" stroke-width="1" width="4" x="423" y="35"/>
+   <rect fill="#404040" height="19" stroke="none" stroke-linecap="square" stroke-width="1" width="4" x="423" y="15"/>
+   <rect fill="#404040" height="4" stroke="none" stroke-linecap="square" stroke-width="1" width="19" x="428" y="33"/>
+   <circle cx="455" cy="55" fill="#404040" r="2.5" stroke="none" stroke-width="1"/>
+   <circle cx="435" cy="65" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="455" cy="65" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="74"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="79">A0</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="94"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="99">A1</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="114"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="119">A2</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="134"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="139">A3</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="154"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="159">A4</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="174"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="179">A5</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="194"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="199">A6</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="214"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="219">A7</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="234"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="239">A8</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="254"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="259">A9</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="274"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="279">AA</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="294"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="299">AB</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="314"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="319">AC</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="334"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="339">AD</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="354"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="359">AE</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="155" y="374"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="170" y="379">AF</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="365" y="74"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="346" y="79">Y0</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="365" y="94"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="346" y="99">Y1</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="365" y="114"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="346" y="119">Y2</text>
+   <rect fill="#000000" height="3" stroke="none" stroke-linecap="square" stroke-width="1" width="10" x="365" y="134"/>
+   <text fill="#404040" font-family="Dialog" font-size="12" x="346" y="139">Y3</text>
+   <rect fill="#000000" height="20" stroke="none" stroke-linecap="square" stroke-width="1" width="200" x="165" y="385"/>
+   <rect fill="none" height="340" stroke="#000000" stroke-linecap="square" stroke-width="2" width="200" x="165" y="65"/>
+   <text fill="#FFFFFF" font-family="Dialog" font-size="14" font-weight="bold" x="212" y="399">Encoder_16to4</text>
+   <circle cx="155" cy="75" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="95" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="115" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="135" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="155" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="175" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="195" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="215" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="235" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="255" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="275" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="295" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="315" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="335" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="355" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="155" cy="375" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="375" cy="75" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="375" cy="95" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="375" cy="115" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+   <circle cx="375" cy="135" fill="#000000" r="2" stroke="none" stroke-width="1"/>
+</svg>
