@@ -85,13 +85,133 @@ section > figure:not(.fullwidth) > svg {
 
 /* Fullwidth content */
 .fullwidth {
-	max-width: 90%;
+	width: 90vw;
+	min-width: 90vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
 	clear: both;
 }
 
 .fullwidth img,
 .fullwidth svg {
 	max-width: 100%;
+}
+
+/*******************************************************************************
+MATH NOTATION
+*******************************************************************************/
+
+.math-block {
+	display: block;
+	width: 55%;
+	text-align: center;
+	margin: 1em 0;
+	padding: 0.5em 0;
+	font-size: 1.4em;
+	line-height: 1.2;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+figure > .math-block {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.fullwidth > .math-block {
+	width: 100%;
+	margin: 1em auto;
+	max-width: 100%;
+}
+
+.math-inline {
+	display: inline-block;
+	vertical-align: baseline;
+	margin: 0 0.1em;
+	text-indent: 0;
+}
+
+.math-inline.is-copyable,
+.math-block.is-copyable {
+	position: relative;
+	cursor: pointer;
+}
+
+.math-inline.is-copyable:focus-visible,
+.math-block.is-copyable:focus-visible {
+	outline: 1px solid currentColor;
+	outline-offset: 0.15em;
+}
+
+.math-inline.is-copyable::after,
+.math-block.is-copyable::after {
+	content: "Copy MathML";
+	position: absolute;
+	z-index: 1;
+	padding: 0.15em 0.45em;
+	color: var(--theme-copy-btn-text, #666);
+	background: var(--theme-copy-btn-bg, #fff);
+	border: 1px solid var(--theme-copy-btn-border, #ccc);
+	border-radius: var(--radius-sm);
+	font-size: 0.75rem;
+	font-style: normal;
+	line-height: 1.4;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transition:
+		opacity 120ms ease,
+		transform 120ms ease;
+}
+
+.math-inline.is-copyable::after {
+	left: 50%;
+	bottom: 100%;
+	transform: translate(-50%, 0.2em);
+}
+
+.math-block.is-copyable::after {
+	top: 0.35em;
+	right: 0.35em;
+	transform: translateY(-0.2em);
+}
+
+.math-inline.is-copyable:hover::after,
+.math-inline.is-copyable:focus-visible::after {
+	opacity: 1;
+	transform: translate(-50%, -0.15em);
+}
+
+.math-block.is-copyable:hover::after,
+.math-block.is-copyable:focus-visible::after {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.math-inline.is-copyable.is-copied::after,
+.math-block.is-copyable.is-copied::after {
+	content: "Copied";
+	color: var(--theme-copy-btn-copied-text, #008000);
+	border-color: var(--theme-copy-btn-copied-border, #008000);
+	background: var(--theme-copy-btn-copied-bg, #e6fffa);
+	opacity: 1;
+}
+
+.math-inline > math,
+.math-block > math {
+	color: inherit;
+}
+
+.math-inline > svg,
+.math-block > svg {
+	display: inline-block;
+}
+
+.math-block > svg {
+	min-width: max-content;
+	text-align: center;
 }
 
 /*******************************************************************************
@@ -316,6 +436,13 @@ div[style*="border-inline-start"] p {
 	width: 100%;
 }
 
+/* Keep display math consistent with formulas in the main text column. */
+div[style*="border-inline-start"] > figure.math-block {
+	width: 100%;
+	max-width: 100%;
+	font-size: 1em;
+}
+
 div[style*="border-inline-start"] .footnote-ref,
 div[style*="border-inline-start"] .marginnote,
 div[style*="border-inline-start"] .footnote-ref a {
@@ -332,6 +459,11 @@ table {
 	border-collapse: collapse;
 	font-size: 1.4rem;
 	line-height: 1.2;
+}
+
+/* A table cell has its own float context; keep its notes below earlier floats. */
+table:has(.marginnote) {
+	clear: right;
 }
 
 /* Naked tables behave like the main text column */
@@ -390,60 +522,14 @@ table tbody tr:hover {
 }
 
 /*******************************************************************************
-MATH NOTATION
-*******************************************************************************/
-
-/* Block math equations - display as block, centered */
-figure[role="math"] {
-	display: block;
-	width: 55%;
-	text-align: center;
-	margin: 1em 0;
-	padding: 0.5em 0;
-	font-size: 1.4em;
-	line-height: 1.2;
-	overflow-x: auto;
-	overflow-y: hidden;
-}
-
-/* Math content wrapper - prevent shrinking */
-figure[role="math"] > * {
-	display: inline-block;
-	min-width: max-content;
-	text-align: center;
-}
-
-figure > figure[role="math"] {
-	display: block;
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
-	padding: 0.5em 0;
-	max-width: 100%;
-	overflow-x: auto;
-	overflow-y: hidden;
-}
-
-/* Math content wrapper for nested figures */
-figure > figure[role="math"] > * {
-	display: inline-block;
-	min-width: max-content;
-	text-align: center;
-}
-
-/* Inline math - smaller size, aligned with text baseline */
-span[role="math"] {
-	display: inline-block;
-	vertical-align: baseline;
-	margin: 0 0.1em;
-	text-indent: 0;
-}
-
-/*******************************************************************************
 RESPONSIVE LAYOUT
 *******************************************************************************/
 
 @media (max-width: 760px) {
+	.math-block {
+		width: 100%;
+	}
+
 	/* Margin notes render inline on narrow screens */
 	.marginnote {
 		display: block;
@@ -532,16 +618,6 @@ RESPONSIVE LAYOUT
 		margin-right: auto;
 	}
 
-	/* Math equations take full width on mobile */
-	figure[role="math"] {
-		width: 100%;
-	}
-
-	/* Blog index rows take full width on mobile */
-	.blog-entry {
-		width: 100%;
-	}
-
 	.article-byline {
 		width: 100%;
 	}
@@ -612,7 +688,7 @@ sup.footnote-ref {
 }
 
 .footnote-ref,
-.footnote-ref + .marginnote {
+.sidenote-footnote {
 	--highlight: transparent;
 	background-color: var(--highlight);
 	box-shadow: 0 0 0 5px var(--highlight);
@@ -634,9 +710,48 @@ sup.footnote-ref {
 	transition-delay: 0s;
 }
 
+.sidenote-anchor {
+	font: inherit;
+	line-height: inherit;
+	pointer-events: none;
+}
+
 @media (min-width: 761px) {
 	sup.marginnote-ref {
 		display: none;
+	}
+
+	/* Keep fallback note geometry stable when notes are nested in lists or blocks. */
+	article > section {
+		/* Fractions of the section width; JS reads the column start as well. */
+		--sidenote-content-width: 0.55;
+		--sidenote-column-start: 0.605;
+		--sidenote-column-width: 0.275;
+		container-type: inline-size;
+	}
+
+	article > section .marginnote {
+		inline-size: calc(100cqi * var(--sidenote-column-width));
+		margin-inline-end: calc(
+			100cqi *
+			(
+				var(--sidenote-content-width) -
+				var(--sidenote-column-start) -
+				var(--sidenote-column-width)
+			)
+		);
+	}
+
+	/* A nested float cannot avoid its parent's text. Keep nested notes in
+	   normal flow so their height is included in the outer side note. */
+	article > section .marginnote .marginnote {
+		display: block;
+		float: none;
+		clear: none;
+		position: static;
+		inline-size: auto;
+		min-inline-size: 0;
+		margin: 0.5em 0;
 	}
 }
 
@@ -700,6 +815,13 @@ BLOG INDEX
 	color: var(--theme-footer, #777);
 	font-size: 1.2em;
 	white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+	/* Blog index rows take full width on mobile */
+	.blog-entry {
+		width: 100%;
+	}
 }
 
 /*******************************************************************************
